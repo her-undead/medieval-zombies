@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://ctktmpfgc66ua"]
+[gd_scene load_steps=8 format=3 uid="uid://ctktmpfgc66ua"]
 
+[ext_resource type="Script" path="res://scenes/camera_2d.gd" id="1_u5cai"]
 [ext_resource type="PackedScene" uid="uid://dek0l00aww0yt" path="res://scenes/player.tscn" id="1_xg7fk"]
 [ext_resource type="Texture2D" uid="uid://c83wc7k2xm3y6" path="res://assets/backgrounds/test_sky.png" id="2_xbawl"]
 [ext_resource type="Texture2D" uid="uid://dm1mk77dhbakv" path="res://assets/backgrounds/test_parallax1.png" id="3_woohq"]
@@ -8,18 +9,28 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j0a2n"]
 distance = -94.0
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_q7asf"]
+
 [node name="Home" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_xg7fk")]
-position = Vector2(-17, 1)
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-8, -93)
+script = ExtResource("1_u5cai")
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(9, -94)
+[node name="Player" parent="." instance=ExtResource("1_xg7fk")]
+unique_name_in_owner = true
+position = Vector2(-17, 1)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 150)
 shape = SubResource("WorldBoundaryShape2D_j0a2n")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -150)
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_q7asf")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
