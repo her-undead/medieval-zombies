@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhxxcv2t1bxp0"]
+[gd_scene load_steps=4 format=3 uid="uid://dhxxcv2t1bxp0"]
 
 [ext_resource type="Script" path="res://scenes/GUI/start_menu.gd" id="1_427uy"]
 [ext_resource type="Texture2D" uid="uid://8kwtngkc121t" path="res://assets/backgrounds/test_ground.png" id="1_w1e0i"]
+[ext_resource type="Texture2D" uid="uid://crjoo5kiacr0b" path="res://assets/Pixel Art Top Down - Basic v1.1.2/Texture/TX Player.png" id="3_gqcj4"]
 
 [node name="StartMenu" type="Control"]
 layout_mode = 3
@@ -51,3 +52,18 @@ text = "Preferences"
 [node name="Exit_Button" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "alkgf"
+
+[node name="Logo_stuff" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 104.0
+offset_right = 304.0
+offset_bottom = 363.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Logo_stuff"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="Logo_stuff/VBoxContainer"]
+position = Vector2(92, 100)
+texture = ExtResource("3_gqcj4")
