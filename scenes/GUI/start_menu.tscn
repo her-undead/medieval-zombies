@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dhxxcv2t1bxp0"]
 
-[ext_resource type="Script" path="res://scenes/GUI/start_menu.gd" id="1_427uy"]
+[ext_resource type="Script" uid="uid://b8qol6oytdur1" path="res://scenes/GUI/start_menu.gd" id="1_427uy"]
 [ext_resource type="Texture2D" uid="uid://8kwtngkc121t" path="res://assets/backgrounds/test_ground.png" id="1_w1e0i"]
 [ext_resource type="Texture2D" uid="uid://crjoo5kiacr0b" path="res://assets/Pixel Art Top Down - Basic v1.1.2/Texture/TX Player.png" id="3_gqcj4"]
 
@@ -14,6 +14,7 @@ grow_vertical = 2
 script = ExtResource("1_427uy")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 1158.0
 offset_bottom = 667.0
 texture = ExtResource("1_w1e0i")
@@ -21,6 +22,7 @@ expand_mode = 3
 stretch_mode = 6
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
 offset_left = 614.0
 offset_top = 271.0
 offset_right = 1122.0
