@@ -1,0 +1,111 @@
+[gd_scene load_steps=16 format=3 uid="uid://bnv1kdn6ubqb7"]
+
+[ext_resource type="Script" uid="uid://deg4duurt76yh" path="res://scenes/camera_2d.gd" id="1_463vv"]
+[ext_resource type="Script" uid="uid://b8b6i3kpy128t" path="res://scenes/locations/forest.gd" id="1_gol5o"]
+[ext_resource type="PackedScene" uid="uid://dek0l00aww0yt" path="res://scenes/characters/player/player.tscn" id="2_xracb"]
+[ext_resource type="Resource" uid="uid://cdttq2xtqnioc" path="res://Items/player_inventory.tres" id="3_gol5o"]
+[ext_resource type="Texture2D" uid="uid://c83wc7k2xm3y6" path="res://assets/backgrounds/test_sky.png" id="4_cd713"]
+[ext_resource type="Texture2D" uid="uid://dm1mk77dhbakv" path="res://assets/backgrounds/test_parallax1.png" id="5_sqr6d"]
+[ext_resource type="Texture2D" uid="uid://8kwtngkc121t" path="res://assets/backgrounds/test_ground.png" id="6_bwvwo"]
+[ext_resource type="PackedScene" uid="uid://del8agwd3cuwr" path="res://Items/inventory_ui.tscn" id="7_w45ep"]
+[ext_resource type="Texture2D" uid="uid://cosn2np77abp" path="res://assets/sprites/trees/pxTree1.png" id="8_ve1ye"]
+[ext_resource type="Texture2D" uid="uid://bul43x6n5ioyx" path="res://assets/sprites/trees/pxTree2.png" id="9_08wlv"]
+[ext_resource type="Texture2D" uid="uid://do5ymjqwhlyix" path="res://assets/sprites/trees/pxTree3.png" id="10_0ethf"]
+[ext_resource type="PackedScene" uid="uid://ojc1ai51e1rf" path="res://helper_scripts/scene_trigger.tscn" id="11_xracb"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_r58t8"]
+distance = -94.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mre32"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gol5o"]
+size = Vector2(45, 41)
+
+[node name="Forest" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_gol5o")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-8, -93)
+script = ExtResource("1_463vv")
+
+[node name="Player" parent="." instance=ExtResource("2_xracb")]
+unique_name_in_owner = true
+y_sort_enabled = true
+position = Vector2(-17, 1)
+inventory = ExtResource("3_gol5o")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 150)
+shape = SubResource("WorldBoundaryShape2D_r58t8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -150)
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_mre32")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(2000, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(413.606, 243.5)
+scale = Vector2(0.808382, 0.377002)
+texture = ExtResource("4_cd713")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(2000, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(417.235, 127)
+scale = Vector2(0.807875, 0.372998)
+texture = ExtResource("5_sqr6d")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(2000, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(408.688, -93)
+scale = Vector2(0.806703, 0.381007)
+texture = ExtResource("6_bwvwo")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Inventory_UI" parent="CanvasLayer" instance=ExtResource("7_w45ep")]
+anchors_preset = -1
+offset_left = 20.0
+offset_top = 20.0
+scale = Vector2(4, 4)
+metadata/_edit_use_anchors_ = true
+
+[node name="PxTree1" type="Sprite2D" parent="."]
+position = Vector2(753, 168)
+scale = Vector2(0.525391, 0.525391)
+texture = ExtResource("8_ve1ye")
+
+[node name="PxTree2" type="Sprite2D" parent="."]
+position = Vector2(1552, 261)
+scale = Vector2(0.394531, 0.394531)
+texture = ExtResource("9_08wlv")
+
+[node name="PxTree3" type="Sprite2D" parent="."]
+position = Vector2(1599, -198)
+scale = Vector2(0.541016, 0.541016)
+texture = ExtResource("10_0ethf")
+
+[node name="SceneTrigger" parent="." instance=ExtResource("11_xracb")]
+position = Vector2(1560, -80)
+connected_scene = "home"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
+position = Vector2(-26, -13)
+shape = SubResource("RectangleShape2D_gol5o")
+
+[node name="EntranceMarkers" type="Node2D" parent="."]
+
+[node name="any" type="Marker2D" parent="EntranceMarkers"]

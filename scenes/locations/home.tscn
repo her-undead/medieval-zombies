@@ -1,12 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://ctktmpfgc66ua"]
+[gd_scene load_steps=12 format=3 uid="uid://ctktmpfgc66ua"]
 
-[ext_resource type="Script" uid="uid://deg4duurt76yh" path="res://scenes/camera_2d.gd" id="1_u5cai"]
-[ext_resource type="PackedScene" uid="uid://dek0l00aww0yt" path="res://scenes/characters/player/player.tscn" id="1_xg7fk"]
-[ext_resource type="Texture2D" uid="uid://c83wc7k2xm3y6" path="res://assets/backgrounds/test_sky.png" id="2_xbawl"]
-[ext_resource type="Resource" uid="uid://cdttq2xtqnioc" path="res://Items/player_inventory.tres" id="3_b4ong"]
-[ext_resource type="Texture2D" uid="uid://dm1mk77dhbakv" path="res://assets/backgrounds/test_parallax1.png" id="3_woohq"]
-[ext_resource type="Texture2D" uid="uid://8kwtngkc121t" path="res://assets/backgrounds/test_ground.png" id="4_eb5q4"]
-[ext_resource type="PackedScene" uid="uid://del8agwd3cuwr" path="res://Items/inventory_ui.tscn" id="4_hkl34"]
+[ext_resource type="Script" uid="uid://388rm2nkvn8m" path="res://scenes/locations/home.gd" id="1_2omcm"]
+[ext_resource type="Script" uid="uid://deg4duurt76yh" path="res://scenes/camera_2d.gd" id="1_21h3r"]
+[ext_resource type="PackedScene" uid="uid://dek0l00aww0yt" path="res://scenes/characters/player/player.tscn" id="2_2omcm"]
+[ext_resource type="Resource" uid="uid://cdttq2xtqnioc" path="res://Items/player_inventory.tres" id="3_wu7lt"]
+[ext_resource type="Texture2D" uid="uid://c83wc7k2xm3y6" path="res://assets/backgrounds/test_sky.png" id="4_uv6bo"]
+[ext_resource type="Texture2D" uid="uid://dm1mk77dhbakv" path="res://assets/backgrounds/test_parallax1.png" id="5_dhown"]
+[ext_resource type="Texture2D" uid="uid://8kwtngkc121t" path="res://assets/backgrounds/test_ground.png" id="6_vmwan"]
+[ext_resource type="PackedScene" uid="uid://del8agwd3cuwr" path="res://Items/inventory_ui.tscn" id="7_1rnfp"]
+[ext_resource type="Texture2D" uid="uid://cgg40gr8xi84j" path="res://assets/sprites/potion.png" id="9_wu7lt"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j0a2n"]
 distance = -94.0
@@ -14,15 +16,17 @@ distance = -94.0
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_q7asf"]
 
 [node name="Home" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_2omcm")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-8, -93)
-script = ExtResource("1_u5cai")
+script = ExtResource("1_21h3r")
 
-[node name="Player" parent="." instance=ExtResource("1_xg7fk")]
+[node name="Player" parent="." instance=ExtResource("2_2omcm")]
 unique_name_in_owner = true
 position = Vector2(-17, 1)
-inventory = ExtResource("3_b4ong")
+inventory = ExtResource("3_wu7lt")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -44,7 +48,7 @@ motion_mirroring = Vector2(2000, 0)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(413.606, 243.5)
 scale = Vector2(0.808382, 0.377002)
-texture = ExtResource("2_xbawl")
+texture = ExtResource("4_uv6bo")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.5, 0.5)
@@ -53,7 +57,7 @@ motion_mirroring = Vector2(2000, 0)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2(417.235, 127)
 scale = Vector2(0.807875, 0.372998)
-texture = ExtResource("3_woohq")
+texture = ExtResource("5_dhown")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2(2000, 0)
@@ -61,12 +65,22 @@ motion_mirroring = Vector2(2000, 0)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
 position = Vector2(408.688, -93)
 scale = Vector2(0.806703, 0.381007)
-texture = ExtResource("4_eb5q4")
+texture = ExtResource("6_vmwan")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Inventory_UI" parent="CanvasLayer" instance=ExtResource("4_hkl34")]
+[node name="Inventory_UI" parent="CanvasLayer" instance=ExtResource("7_1rnfp")]
 anchors_preset = -1
 offset_left = 20.0
 offset_top = 20.0
 scale = Vector2(4, 4)
+metadata/_edit_use_anchors_ = true
+
+[node name="EntranceMarkers" type="Node2D" parent="."]
+position = Vector2(129, 19)
+
+[node name="any" type="Marker2D" parent="EntranceMarkers"]
+
+[node name="Potion" type="Sprite2D" parent="."]
+position = Vector2(129, 19)
+texture = ExtResource("9_wu7lt")
