@@ -10,10 +10,11 @@ func _ready():
 			
 		player = scene_manager.player
 		add_child(player)
+	
+	position_player()
 		
 func position_player() -> void:
 	for entrance in entrance_markers.get_children():
+		print("laksdfj")
 		if entrance is Marker2D and entrance.name =="any":
-			print("entrance: "+ entrance.global_position);
-			print(player.global_position);
 			player.global_position = entrance.global_position
