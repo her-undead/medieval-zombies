@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ctktmpfgc66ua"]
+[gd_scene load_steps=14 format=3 uid="uid://ctktmpfgc66ua"]
 
 [ext_resource type="Script" uid="uid://388rm2nkvn8m" path="res://scenes/locations/home.gd" id="1_2omcm"]
 [ext_resource type="Script" uid="uid://deg4duurt76yh" path="res://scenes/camera_2d.gd" id="1_21h3r"]
@@ -9,11 +9,15 @@
 [ext_resource type="Texture2D" uid="uid://8kwtngkc121t" path="res://assets/backgrounds/test_ground.png" id="6_vmwan"]
 [ext_resource type="PackedScene" uid="uid://del8agwd3cuwr" path="res://Items/inventory_ui.tscn" id="7_1rnfp"]
 [ext_resource type="Texture2D" uid="uid://cgg40gr8xi84j" path="res://assets/sprites/potion.png" id="9_wu7lt"]
+[ext_resource type="PackedScene" uid="uid://ojc1ai51e1rf" path="res://helper_scripts/scene_trigger.tscn" id="10_uv6bo"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j0a2n"]
 distance = -94.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_q7asf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dhown"]
+size = Vector2(45, 41)
 
 [node name="Home" type="Node2D"]
 y_sort_enabled = true
@@ -81,6 +85,14 @@ position = Vector2(129, 19)
 
 [node name="any" type="Marker2D" parent="EntranceMarkers"]
 
-[node name="Potion" type="Sprite2D" parent="."]
-position = Vector2(129, 19)
+[node name="SceneTrigger" parent="." instance=ExtResource("10_uv6bo")]
+position = Vector2(-387, 14)
+connected_scene = "forest"
+
+[node name="Potion" type="Sprite2D" parent="SceneTrigger"]
+position = Vector2(-28, -13)
 texture = ExtResource("9_wu7lt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
+position = Vector2(-26, -13)
+shape = SubResource("RectangleShape2D_dhown")
