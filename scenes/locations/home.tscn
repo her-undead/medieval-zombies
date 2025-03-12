@@ -43,32 +43,36 @@ position = Vector2(0, -150)
 rotation = 3.14159
 shape = SubResource("WorldBoundaryShape2D_q7asf")
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.1, 1)
+repeat_size = Vector2(1024, 0)
+repeat_times = 3
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.1, 0.1)
-motion_mirroring = Vector2(2000, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(413.606, 243.5)
-scale = Vector2(0.808382, 0.377002)
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2"]
+z_index = -2
+position = Vector2(-5.5, -89.4999)
+scale = Vector2(0.463306, 0.371281)
 texture = ExtResource("4_uv6bo")
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.5, 0.5)
-motion_mirroring = Vector2(2000, 0)
+[node name="Parallax2D3" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.5, 1)
+repeat_size = Vector2(1024, 0)
+repeat_times = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2(417.235, 127)
-scale = Vector2(0.807875, 0.372998)
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3"]
+z_index = -2
+position = Vector2(-5.49997, -87)
+scale = Vector2(0.468952, 0.375286)
 texture = ExtResource("5_dhown")
 
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2(2000, 0)
+[node name="Parallax2D" type="Parallax2D" parent="."]
+z_index = -2
+repeat_size = Vector2(1024, 0)
+repeat_times = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2(408.688, -93)
-scale = Vector2(0.806703, 0.381007)
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(-3.40598, -88.5)
+scale = Vector2(0.466456, 0.371281)
 texture = ExtResource("6_vmwan")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
