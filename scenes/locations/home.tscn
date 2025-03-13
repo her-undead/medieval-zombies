@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ctktmpfgc66ua"]
+[gd_scene load_steps=17 format=3 uid="uid://ctktmpfgc66ua"]
 
 [ext_resource type="Script" uid="uid://388rm2nkvn8m" path="res://scenes/locations/home.gd" id="1_2omcm"]
 [ext_resource type="Script" uid="uid://deg4duurt76yh" path="res://scenes/camera_2d.gd" id="1_21h3r"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://del8agwd3cuwr" path="res://Items/inventory_ui.tscn" id="7_1rnfp"]
 [ext_resource type="Texture2D" uid="uid://cgg40gr8xi84j" path="res://assets/sprites/potion.png" id="9_wu7lt"]
 [ext_resource type="PackedScene" uid="uid://ojc1ai51e1rf" path="res://helper_scripts/scene_trigger.tscn" id="10_uv6bo"]
+[ext_resource type="Script" uid="uid://di0ufriph8dnf" path="res://helper_scripts/time/time_system.gd" id="11_dhown"]
+[ext_resource type="Script" uid="uid://c118nnyg47hus" path="res://helper_scripts/time/date_time.gd" id="12_vmwan"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j0a2n"]
 distance = -94.0
@@ -18,6 +20,14 @@ distance = -94.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dhown"]
 size = Vector2(45, 41)
+
+[sub_resource type="Resource" id="Resource_1rnfp"]
+script = ExtResource("12_vmwan")
+seconds = 0
+minutes = 0
+hours = 0
+days = 0
+metadata/_custom_type_script = "uid://c118nnyg47hus"
 
 [node name="Home" type="Node2D"]
 y_sort_enabled = true
@@ -50,8 +60,8 @@ repeat_times = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D2"]
 z_index = -2
-position = Vector2(-5.5, -89.4999)
-scale = Vector2(0.463306, 0.371281)
+position = Vector2(-67.9997, -89.4999)
+scale = Vector2(0.412903, 0.371281)
 texture = ExtResource("4_uv6bo")
 
 [node name="Parallax2D3" type="Parallax2D" parent="."]
@@ -61,8 +71,8 @@ repeat_times = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D3"]
 z_index = -2
-position = Vector2(-5.49997, -87)
-scale = Vector2(0.468952, 0.375286)
+position = Vector2(-75.5002, -87)
+scale = Vector2(0.4125, 0.375286)
 texture = ExtResource("5_dhown")
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
@@ -70,9 +80,9 @@ z_index = -2
 repeat_size = Vector2(1024, 0)
 repeat_times = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
-position = Vector2(-3.40598, -88.5)
-scale = Vector2(0.466456, 0.371281)
+[node name="TestGround" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(-70.8078, -130.25)
+scale = Vector2(0.412757, 0.412757)
 texture = ExtResource("6_vmwan")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -100,3 +110,8 @@ texture = ExtResource("9_wu7lt")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
 position = Vector2(-26, -13)
 shape = SubResource("RectangleShape2D_dhown")
+
+[node name="TimeSystem" type="Node" parent="."]
+script = ExtResource("11_dhown")
+date_time = SubResource("Resource_1rnfp")
+metadata/_custom_type_script = "uid://di0ufriph8dnf"
