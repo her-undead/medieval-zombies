@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ctktmpfgc66ua"]
+[gd_scene load_steps=11 format=3 uid="uid://ctktmpfgc66ua"]
 
 [ext_resource type="Script" uid="uid://deg4duurt76yh" path="res://scenes/camera_2d.gd" id="1_u5cai"]
 [ext_resource type="PackedScene" uid="uid://dek0l00aww0yt" path="res://scenes/characters/player/player.tscn" id="1_xg7fk"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dm1mk77dhbakv" path="res://assets/backgrounds/test_parallax1.png" id="3_woohq"]
 [ext_resource type="Texture2D" uid="uid://8kwtngkc121t" path="res://assets/backgrounds/test_ground.png" id="4_eb5q4"]
 [ext_resource type="PackedScene" uid="uid://del8agwd3cuwr" path="res://Items/inventory_ui.tscn" id="4_hkl34"]
+[ext_resource type="PackedScene" uid="uid://cs6dt26oswutq" path="res://scenes/characters/villager.tscn" id="8_4fycn"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j0a2n"]
 distance = -94.0
@@ -18,6 +19,9 @@ distance = -94.0
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-8, -93)
 script = ExtResource("1_u5cai")
+
+[node name="villager" parent="." instance=ExtResource("8_4fycn")]
+position = Vector2(648, -59)
 
 [node name="Player" parent="." instance=ExtResource("1_xg7fk")]
 unique_name_in_owner = true
@@ -38,6 +42,7 @@ shape = SubResource("WorldBoundaryShape2D_q7asf")
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
 motion_scale = Vector2(0.1, 0.1)
 motion_mirroring = Vector2(2000, 0)
 
@@ -47,6 +52,7 @@ scale = Vector2(0.808382, 0.377002)
 texture = ExtResource("2_xbawl")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
 motion_scale = Vector2(0.5, 0.5)
 motion_mirroring = Vector2(2000, 0)
 
@@ -66,6 +72,7 @@ texture = ExtResource("4_eb5q4")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Inventory_UI" parent="CanvasLayer" instance=ExtResource("4_hkl34")]
+visible = false
 anchors_preset = -1
 offset_left = 20.0
 offset_top = 20.0

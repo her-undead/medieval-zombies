@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://ifqve8gh0r17"]
+
+[ext_resource type="Script" uid="uid://cog171ouf78xg" path="res://scenes/GUI/dialogue.gd" id="1_5f26u"]
+[ext_resource type="Texture2D" uid="uid://bqbmgkuao7oct" path="res://assets/sprites/inventory-background-placeholder.png" id="1_kbyi3"]
+
+[node name="Dialogue" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_5f26u")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = -238.0
+offset_top = -239.0
+offset_right = 253.0
+offset_bottom = -86.0
+texture = ExtResource("1_kbyi3")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="Name" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 1.0
+offset_right = 248.0
+offset_bottom = 41.0
+scale = Vector2(2, 2)
+text = "Name:"
+
+[node name="Text" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 45.0
+offset_right = 324.0
+offset_bottom = 114.0
+scale = Vector2(1.5, 1.5)
+text = "I can talk!
+"

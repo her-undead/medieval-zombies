@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cs6dt26oswutq"]
+
+[ext_resource type="Script" uid="uid://brwtxh4es401v" path="res://villager.gd" id="1_5egup"]
+[ext_resource type="Texture2D" uid="uid://ct083yirtavwd" path="res://assets/sprites/villager.jpg" id="2_ohhgr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fk5tp"]
+radius = 53.033
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6mwv6"]
+radius = 189.402
+
+[node name="villager" type="CharacterBody2D"]
+script = ExtResource("1_5egup")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ohhgr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5.5, 0.5)
+shape = SubResource("CircleShape2D_fk5tp")
+
+[node name="DetectCloseness" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectCloseness"]
+shape = SubResource("CircleShape2D_6mwv6")
+
+[connection signal="body_entered" from="DetectCloseness" to="." method="_on_detect_closeness_body_entered"]
+[connection signal="body_exited" from="DetectCloseness" to="." method="_on_detect_closeness_body_exited"]
