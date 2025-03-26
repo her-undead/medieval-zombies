@@ -7,6 +7,7 @@ var suspicion_level = 0
 var sus = false
 
 func _process(delta):
+	suspicion_level = scene_manager.sus_level
 	if suspicion_level > 1:
 		sus = true
 	if player_in_chatzone && !is_chatting:
@@ -15,15 +16,17 @@ func _process(delta):
 			is_chatting = true
 			print("chatting")
 			suspicion_level += 1
+			scene_manager.sus_level = suspicion_level
+			
 
 func _on_detect_closeness_body_entered(body: Node2D) -> void:
-		if body.name == "Player":
+		if body is Player:
 			print("entered")
 			player = body
 			player_in_chatzone = true
 
 func _on_detect_closeness_body_exited(body: Node2D) -> void:
-		if body.name == "Player":
+		if body is Player:
 			player_in_chatzone = false
 
 
