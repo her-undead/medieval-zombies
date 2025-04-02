@@ -33,3 +33,6 @@ func _on_detect_closeness_body_exited(body: Node2D) -> void:
 func _on_dialogue_dialogue_finished() -> void:
 	is_chatting = false
 	player_in_chatzone = false
+	player.is_chatting = false
+	player.player_in_chatzone = false
+	#player.get_parent().is_chatting = false
