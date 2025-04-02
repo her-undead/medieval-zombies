@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name Zombie extends CharacterBody2D
 
 @onready var target = %Player
 
@@ -10,6 +10,8 @@ func _physics_process(delta: float) -> void:
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
+	if not is_instance_valid(target):
+		return
 	var direction = (target.position-position).normalized()
 	velocity = direction * SPEED
 	look_at(target.position)

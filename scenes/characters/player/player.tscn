@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dek0l00aww0yt"]
+[gd_scene load_steps=11 format=3 uid="uid://dek0l00aww0yt"]
 
 [ext_resource type="Script" uid="uid://cdkv6nhigrn4t" path="res://scenes/characters/player/player.gd" id="1_20d7k"]
 [ext_resource type="Texture2D" uid="uid://bsuphilgajkis" path="res://assets/sprites/spritesheetVeil.png" id="2_t61fv"]
