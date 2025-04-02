@@ -1,38 +1,24 @@
-[gd_scene load_steps=9 format=3 uid="uid://d08ucntvj4von"]
+[gd_scene load_steps=7 format=3 uid="uid://d08ucntvj4von"]
 
 [ext_resource type="Script" uid="uid://cn87ncdvj1n4h" path="res://scenes/characters/zombie/zombie.gd" id="1_5jdp2"]
-[ext_resource type="Texture2D" uid="uid://bbeg7vg1q0bto" path="res://assets/sprites/wizard_sprite.jpg" id="1_65pln"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5jdp2"]
-atlas = ExtResource("1_65pln")
-region = Rect2(238, 653, 192, 217)
+[ext_resource type="Texture2D" uid="uid://dp6xut2jtmlgs" path="res://assets/sprites/ZombieSpritesheet.png" id="2_5jdp2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hu0q8"]
-atlas = ExtResource("1_65pln")
-region = Rect2(430, 653, 192, 217)
+atlas = ExtResource("2_5jdp2")
+region = Rect2(1026, 0, 1026, 1026)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nvxh3"]
-atlas = ExtResource("1_65pln")
-region = Rect2(622, 653, 192, 217)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_076y6"]
-atlas = ExtResource("1_65pln")
-region = Rect2(814, 653, 192, 217)
+atlas = ExtResource("2_5jdp2")
+region = Rect2(0, 0, 1026, 1026)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vqjth"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5jdp2")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_hu0q8")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nvxh3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_076y6")
 }],
 "loop": true,
 "name": &"default",
@@ -43,12 +29,13 @@ animations = [{
 size = Vector2(178, 119)
 
 [node name="Zombie" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_5jdp2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.150097, 0.150097)
 sprite_frames = SubResource("SpriteFrames_vqjth")
 autoplay = "default"
-frame = 2
 frame_progress = 0.0667236
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
