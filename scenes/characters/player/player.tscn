@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dek0l00aww0yt"]
+[gd_scene load_steps=14 format=3 uid="uid://dek0l00aww0yt"]
 
 [ext_resource type="Script" uid="uid://cdkv6nhigrn4t" path="res://scenes/characters/player/player.gd" id="1_20d7k"]
 [ext_resource type="Texture2D" uid="uid://bbeg7vg1q0bto" path="res://assets/sprites/wizard_sprite.jpg" id="1_rd8vl"]
@@ -70,6 +70,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pa5cs"]
 size = Vector2(43, 84)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t61fv"]
+size = Vector2(239, 225)
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 9
 script = ExtResource("1_20d7k")
@@ -81,3 +84,12 @@ autoplay = "default"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(20.5, 45)
 shape = SubResource("RectangleShape2D_pa5cs")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(3.5, 2.5)
+shape = SubResource("RectangleShape2D_t61fv")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
