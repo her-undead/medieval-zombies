@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddrw62oggeb0v"
-path="res://.godot/imported/sprite_1.png-e71bdf931caaf0dd1f5a1f170c1c57ba.ctex"
+uid="uid://bsuphilgajkis"
+path="res://.godot/imported/spritesheetVeil.png-41ed86df423ea6f53ce9eb92b467735d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/sprite_1.png"
-dest_files=["res://.godot/imported/sprite_1.png-e71bdf931caaf0dd1f5a1f170c1c57ba.ctex"]
+source_file="res://assets/sprites/spritesheetVeil.png"
+dest_files=["res://.godot/imported/spritesheetVeil.png-41ed86df423ea6f53ce9eb92b467735d.ctex"]
 
 [params]
 

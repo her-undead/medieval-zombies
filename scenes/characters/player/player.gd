@@ -5,6 +5,7 @@ const SPEED = 300.0
 #const JUMP_VELOCITY = -400.0
 
 @export var inventory: Inventory
+@onready var _animated_sprite = $AnimatedSprite2D
 
 var is_chatting = false
 var player_in_chatzone = false
@@ -33,8 +34,10 @@ func _physics_process(delta: float) -> void:
 		var direction := Input.get_axis("ui_left", "ui_right")
 		if direction:
 			velocity.x = direction * SPEED
+			_animated_sprite.play("walk_right");
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
+			_animated_sprite.play("idle_right")
 
 		var directionY := Input.get_axis("ui_up", "ui_down")
 		if directionY:
