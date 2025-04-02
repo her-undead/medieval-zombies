@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bnv1kdn6ubqb7"]
+[gd_scene load_steps=17 format=3 uid="uid://bnv1kdn6ubqb7"]
 
 [ext_resource type="Script" uid="uid://deg4duurt76yh" path="res://scenes/camera_2d.gd" id="1_463vv"]
 [ext_resource type="Script" uid="uid://b8b6i3kpy128t" path="res://scenes/locations/forest.gd" id="1_gol5o"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bul43x6n5ioyx" path="res://assets/sprites/trees/pxTree2.png" id="9_08wlv"]
 [ext_resource type="Texture2D" uid="uid://do5ymjqwhlyix" path="res://assets/sprites/trees/pxTree3.png" id="10_0ethf"]
 [ext_resource type="PackedScene" uid="uid://ojc1ai51e1rf" path="res://helper_scripts/scene_trigger.tscn" id="11_xracb"]
+[ext_resource type="PackedScene" uid="uid://d08ucntvj4von" path="res://scenes/characters/zombie/zombie.tscn" id="13_cd713"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_r58t8"]
 distance = -94.0
@@ -109,3 +110,6 @@ shape = SubResource("RectangleShape2D_gol5o")
 [node name="EntranceMarkers" type="Node2D" parent="."]
 
 [node name="any" type="Marker2D" parent="EntranceMarkers"]
+
+[node name="Zombie" parent="." instance=ExtResource("13_cd713")]
+position = Vector2(350, -41)
