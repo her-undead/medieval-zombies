@@ -1,18 +1,35 @@
-class_name Zombie extends CharacterBody2D
+extends CharacterBody2D
 
-@onready var target = %Player
+@export var speed = 150;
+@export var limit = 0.5;
+@export var endPoint: Marker2D
 
-const SPEED = 150.0
+var startPosition
+var endPosition
+@onready var _animated_sprite = $AnimatedSprite2D
 
+func _ready():
+	startPosition = position
+	endPosition = startPosition + Vector2(30*16, 0)
+	
+func changeDirection():
+	var tempEnd = endPosition
+	endPosition = startPosition
+	startPosition = tempEnd
+
+func updateVelocity():
+	var moveDirection = endPosition - position
+	if moveDirection.length() < limit:
+		changeDirection()
+	velocity = moveDirection.normalized() * speed
+	
+func updateAnimation():
+	var spriteString = "left"
+	if velocity.x > 0:
+		spriteString = "right"
+	_animated_sprite.play(spriteString)
+	
 func _physics_process(delta: float) -> void:
-	## Add the gravity.
-	
-	
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	if not is_instance_valid(target):
-		return
-	var direction = (target.position-position).normalized()
-	velocity = direction * SPEED
-	look_at(target.position)
+	updateVelocity()
 	move_and_slide()
+	updateAnimation()

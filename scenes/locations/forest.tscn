@@ -1,9 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://bnv1kdn6ubqb7"]
+[gd_scene load_steps=15 format=3 uid="uid://bnv1kdn6ubqb7"]
 
 [ext_resource type="Script" uid="uid://deg4duurt76yh" path="res://scenes/camera_2d.gd" id="1_463vv"]
 [ext_resource type="Script" uid="uid://b8b6i3kpy128t" path="res://scenes/locations/forest.gd" id="1_gol5o"]
-[ext_resource type="PackedScene" uid="uid://dek0l00aww0yt" path="res://scenes/characters/player/player.tscn" id="2_xracb"]
-[ext_resource type="Resource" uid="uid://cdttq2xtqnioc" path="res://Items/player_inventory.tres" id="3_gol5o"]
 [ext_resource type="Texture2D" uid="uid://c83wc7k2xm3y6" path="res://assets/backgrounds/test_sky.png" id="4_cd713"]
 [ext_resource type="Texture2D" uid="uid://dm1mk77dhbakv" path="res://assets/backgrounds/test_parallax1.png" id="5_sqr6d"]
 [ext_resource type="Texture2D" uid="uid://8kwtngkc121t" path="res://assets/backgrounds/test_ground.png" id="6_bwvwo"]
@@ -29,12 +27,6 @@ script = ExtResource("1_gol5o")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-8, -93)
 script = ExtResource("1_463vv")
-
-[node name="Player" parent="." instance=ExtResource("2_xracb")]
-unique_name_in_owner = true
-y_sort_enabled = true
-position = Vector2(-17, 1)
-inventory = ExtResource("3_gol5o")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
