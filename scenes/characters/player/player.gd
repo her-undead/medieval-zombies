@@ -34,10 +34,8 @@ func _physics_process(delta: float) -> void:
 		var direction := Input.get_axis("ui_left", "ui_right")
 		if direction:
 			velocity.x = direction * SPEED
-			_animated_sprite.play("walk_right");
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
-			_animated_sprite.play("idle_right")
 
 		var directionY := Input.get_axis("ui_up", "ui_down")
 		if directionY:
@@ -46,12 +44,34 @@ func _physics_process(delta: float) -> void:
 			velocity.y = move_toward(velocity.y, 0, SPEED)
 
 		move_and_slide()
+		updateAnimation()
 	
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Villagers"):
 		player_in_chatzone = true
 
+func updateAnimation():
+	var currSprite = _animated_sprite.animation;
+	var spriteString = currSprite;
+	var string1
+	var string2
+	
+	if currSprite.contains("left"):
+		string2 = "left"
+	else:
+		string2 = "right"
+	if velocity == Vector2(0,0):
+		string1 = "idle"
+	else:
+		string1 = "walk"
+	if velocity.x > 0 :
+		string2 = "right"
+	elif velocity.x < 0:
+		string2 = "left"
+	print(string1 + "_" + string2)
+	spriteString = string1 + "_" + string2
+	_animated_sprite.play(spriteString)
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Villagers"):

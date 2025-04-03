@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://d08ucntvj4von"]
+[gd_scene load_steps=10 format=3 uid="uid://d08ucntvj4von"]
 
-[ext_resource type="Script" uid="uid://cn87ncdvj1n4h" path="res://scenes/characters/zombie/zombie.gd" id="1_5jdp2"]
+[ext_resource type="Script" uid="uid://de5kq7l6blv8b" path="res://scenes/characters/zombie/zombie.gd" id="1_5jdp2"]
 [ext_resource type="Texture2D" uid="uid://dp6xut2jtmlgs" path="res://assets/sprites/ZombieSpritesheet.png" id="2_5jdp2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hu0q8"]
@@ -10,6 +10,14 @@ region = Rect2(1026, 0, 1026, 1026)
 [sub_resource type="AtlasTexture" id="AtlasTexture_nvxh3"]
 atlas = ExtResource("2_5jdp2")
 region = Rect2(0, 0, 1026, 1026)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jdp2"]
+atlas = ExtResource("2_5jdp2")
+region = Rect2(0, 1026, 1026, 1026)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_076y6"]
+atlas = ExtResource("2_5jdp2")
+region = Rect2(1026, 1026, 1026, 1026)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vqjth"]
 animations = [{
@@ -21,12 +29,26 @@ animations = [{
 "texture": SubResource("AtlasTexture_nvxh3")
 }],
 "loop": true,
-"name": &"default",
-"speed": 5.0
+"name": &"left",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jdp2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_076y6")
+}],
+"loop": true,
+"name": &"right",
+"speed": 2.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ilqf0"]
-size = Vector2(178, 119)
+size = Vector2(188, 119)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ilqf0"]
+radius = 262.0
 
 [node name="Zombie" type="CharacterBody2D"]
 collision_layer = 2
@@ -35,9 +57,17 @@ script = ExtResource("1_5jdp2")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.150097, 0.150097)
 sprite_frames = SubResource("SpriteFrames_vqjth")
-autoplay = "default"
-frame_progress = 0.0667236
+animation = &"right"
+autoplay = "left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-6, 49.5)
+position = Vector2(-1, 49.5)
 shape = SubResource("RectangleShape2D_ilqf0")
+
+[node name="FollowArea" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FollowArea"]
+shape = SubResource("CircleShape2D_ilqf0")
+
+[connection signal="body_entered" from="FollowArea" to="." method="_on_follow_area_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dek0l00aww0yt"]
+[gd_scene load_steps=13 format=3 uid="uid://dek0l00aww0yt"]
 
 [ext_resource type="Script" uid="uid://cdkv6nhigrn4t" path="res://scenes/characters/player/player.gd" id="1_20d7k"]
 [ext_resource type="Texture2D" uid="uid://bsuphilgajkis" path="res://assets/sprites/spritesheetVeil.png" id="2_t61fv"]
@@ -15,6 +15,14 @@ region = Rect2(2052, 1026, 1026, 1026)
 atlas = ExtResource("2_t61fv")
 region = Rect2(0, 2052, 1026, 1026)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_mk55u"]
+atlas = ExtResource("2_t61fv")
+region = Rect2(1026, 2052, 1026, 1026)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xuses"]
+atlas = ExtResource("2_t61fv")
+region = Rect2(2052, 2052, 1026, 1026)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_qd3e3"]
 atlas = ExtResource("2_t61fv")
 region = Rect2(3078, 0, 1026, 1026)
@@ -28,12 +36,12 @@ animations = [{
 "frames": [],
 "loop": true,
 "name": &"crouch_left",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [],
 "loop": true,
 "name": &"crouch_right",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -41,7 +49,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -57,12 +65,18 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_right",
-"speed": 5.0
+"speed": 2.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mk55u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xuses")
+}],
 "loop": true,
 "name": &"walk_left",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -73,7 +87,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_right",
-"speed": 5.0
+"speed": 2.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pa5cs"]
@@ -89,7 +103,6 @@ script = ExtResource("1_20d7k")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.181287, 0.181287)
 sprite_frames = SubResource("SpriteFrames_xx6vg")
-animation = &"walk_right"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
