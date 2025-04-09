@@ -6,6 +6,8 @@ class_name FollowScript extends Node
 var start_position
 var target: Player
 
+var targeting_player = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	start_position = parent.position
@@ -27,6 +29,13 @@ func disable() -> void:
 
 func _on_follow_area_body_entered(body):
 	if body is Player:
+		targeting_player = true
 		target = body;
 		print("hi")
 		
+
+func _on_follow_area_body_exited(body: Node2D) -> void:
+	if body == target:
+		targeting_player = false
+		target = null;
+		print("hi")

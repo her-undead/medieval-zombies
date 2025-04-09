@@ -94,3 +94,5 @@ shape = SubResource("CircleShape2D_ilqf0")
 [connection signal="area_entered" from="FollowArea" to="FollowScript" method="_on_follow_area_area_entered"]
 [connection signal="body_entered" from="FollowArea" to="." method="_on_follow_area_body_entered"]
 [connection signal="body_entered" from="FollowArea" to="FollowScript" method="_on_follow_area_body_entered"]
+[connection signal="body_exited" from="FollowArea" to="." method="_on_follow_area_body_exited"]
+[connection signal="body_exited" from="FollowArea" to="FollowScript" method="_on_follow_area_body_exited"]

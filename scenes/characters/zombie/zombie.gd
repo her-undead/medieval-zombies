@@ -18,10 +18,11 @@ func changeDirection():
 	startPosition = tempEnd
 
 func updateVelocity():
-	var moveDirection = endPosition - position
-	if moveDirection.length() < limit:
-		changeDirection()
-	velocity = moveDirection.normalized() * speed
+	if !($FollowScript).targeting_player:
+		var moveDirection = endPosition - position
+		if moveDirection.length() < limit:
+			changeDirection()
+		velocity = moveDirection.normalized() * speed
 	
 func updateAnimation():
 	var spriteString = "left"
