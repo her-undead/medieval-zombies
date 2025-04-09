@@ -1,7 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://d08ucntvj4von"]
+[gd_scene load_steps=12 format=3 uid="uid://d08ucntvj4von"]
 
 [ext_resource type="Script" uid="uid://de5kq7l6blv8b" path="res://scenes/characters/zombie/zombie.gd" id="1_5jdp2"]
 [ext_resource type="Texture2D" uid="uid://dp6xut2jtmlgs" path="res://assets/sprites/ZombieSpritesheet.png" id="2_5jdp2"]
+[ext_resource type="Script" uid="uid://crricjstwlfgx" path="res://follow_script.gd" id="3_hu0q8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hu0q8"]
+radius = 35.0
+height = 70.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hu0q8"]
 atlas = ExtResource("2_5jdp2")
@@ -44,25 +49,41 @@ animations = [{
 "speed": 2.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ilqf0"]
-size = Vector2(188, 119)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5jdp2"]
+radius = 39.0
+height = 152.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ilqf0"]
-radius = 262.0
+radius = 280.002
 
 [node name="Zombie" type="CharacterBody2D"]
-collision_layer = 2
+y_sort_enabled = true
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("1_5jdp2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 48)
+shape = SubResource("CapsuleShape2D_hu0q8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.150097, 0.150097)
 sprite_frames = SubResource("SpriteFrames_vqjth")
 animation = &"right"
 autoplay = "left"
+frame = 1
+frame_progress = 0.377851
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 49.5)
-shape = SubResource("RectangleShape2D_ilqf0")
+[node name="FollowScript" type="Node" parent="."]
+script = ExtResource("3_hu0q8")
+metadata/_custom_type_script = "uid://crricjstwlfgx"
+
+[node name="hitBox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitBox"]
+shape = SubResource("CapsuleShape2D_5jdp2")
 
 [node name="FollowArea" type="Area2D" parent="."]
 collision_layer = 0
@@ -70,4 +91,6 @@ collision_layer = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FollowArea"]
 shape = SubResource("CircleShape2D_ilqf0")
 
+[connection signal="area_entered" from="FollowArea" to="FollowScript" method="_on_follow_area_area_entered"]
 [connection signal="body_entered" from="FollowArea" to="." method="_on_follow_area_body_entered"]
+[connection signal="body_entered" from="FollowArea" to="FollowScript" method="_on_follow_area_body_entered"]

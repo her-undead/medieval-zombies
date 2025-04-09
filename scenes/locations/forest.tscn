@@ -103,5 +103,9 @@ shape = SubResource("RectangleShape2D_gol5o")
 
 [node name="any" type="Marker2D" parent="EntranceMarkers"]
 
-[node name="Zombie" parent="." instance=ExtResource("13_cd713")]
+[node name="Zombie" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("13_cd713")]
 position = Vector2(350, -41)
+endPoint = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="Zombie"]
+position = Vector2(685, 83)

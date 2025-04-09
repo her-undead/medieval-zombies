@@ -40,6 +40,7 @@ chat={
 
 2d_physics/layer_1="player"
 2d_physics/layer_2="np"
+2d_physics/layer_3="zombie"
 2d_physics/layer_4="triggers"
 
 [rendering]

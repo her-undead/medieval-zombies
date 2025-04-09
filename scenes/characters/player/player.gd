@@ -44,6 +44,7 @@ func _physics_process(delta: float) -> void:
 			velocity.y = move_toward(velocity.y, 0, SPEED)
 
 		move_and_slide()
+		handleCollision()
 		updateAnimation()
 	
 
@@ -51,6 +52,12 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Villagers"):
 		player_in_chatzone = true
 
+func handleCollision():
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i);
+		var collider = collision.get_collider();
+		#print(collider.name)
+		
 func updateAnimation():
 	var currSprite = _animated_sprite.animation;
 	var spriteString = currSprite;
@@ -69,7 +76,6 @@ func updateAnimation():
 		string2 = "right"
 	elif velocity.x < 0:
 		string2 = "left"
-	print(string1 + "_" + string2)
 	spriteString = string1 + "_" + string2
 	_animated_sprite.play(spriteString)
 
@@ -77,3 +83,8 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Villagers"):
 		player_in_chatzone = false
 		
+
+
+func _on_hurt_box_area_entered(area: Area2D) -> void:
+	if area.name == "hitBox":
+		print_debug("test"+area.get_parent().name)

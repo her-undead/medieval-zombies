@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 150;
+@export var speed = 50;
 @export var limit = 0.5;
 @export var endPoint: Marker2D
 
@@ -10,7 +10,7 @@ var endPosition
 
 func _ready():
 	startPosition = position
-	endPosition = startPosition + Vector2(30*16, 0)
+	endPosition = endPoint.global_position
 	
 func changeDirection():
 	var tempEnd = endPosition
