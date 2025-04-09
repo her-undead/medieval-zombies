@@ -15,6 +15,5 @@ func _ready():
 		
 func position_player() -> void:
 	for entrance in entrance_markers.get_children():
-		print("laksdfj")
 		if entrance is Marker2D and entrance.name =="any":
 			player.global_position = entrance.global_position
