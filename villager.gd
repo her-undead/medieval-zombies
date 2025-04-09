@@ -21,7 +21,7 @@ func _process(delta):
 
 func _on_detect_closeness_body_entered(body: Node2D) -> void:
 		if body is Player:
-			print("entered")
+			#print("entered")
 			player = body
 			player_in_chatzone = true
 
