@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bf2dmyh33ywot"]
+
+[ext_resource type="Texture2D" uid="uid://j3h6tk2x3kbf" path="res://assets/sprites/page.png" id="1_n3y1a"]
+[ext_resource type="Script" uid="uid://bbaejwa6taf61" path="res://Items/page.gd" id="2_xd5tk"]
+[ext_resource type="Script" uid="uid://do8wpemr2tl0o" path="res://pick_up.gd" id="3_7um2t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xd5tk"]
+size = Vector2(91, 93)
+
+[node name="Sprite2D" type="Sprite2D"]
+texture = ExtResource("1_n3y1a")
+script = ExtResource("2_xd5tk")
+
+[node name="PickUpArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUpArea"]
+position = Vector2(1.5, 2.5)
+shape = SubResource("RectangleShape2D_xd5tk")
+
+[node name="PickUp" type="Node" parent="."]
+script = ExtResource("3_7um2t")
+metadata/_custom_type_script = "uid://do8wpemr2tl0o"
+
+[connection signal="body_entered" from="PickUpArea" to="PickUp" method="_on_pick_up_area_body_entered"]
+[connection signal="input_event" from="PickUpArea" to="PickUp" method="_on_pick_up_area_input_event"]

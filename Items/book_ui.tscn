@@ -1,0 +1,195 @@
+[gd_scene load_steps=23 format=3 uid="uid://bbtlou4mlr1r1"]
+
+[ext_resource type="Texture2D" uid="uid://d4jog1klgnb11" path="res://assets/sprites/Book_Sheet_64x64.png" id="1_tvpga"]
+[ext_resource type="Script" uid="uid://cvx7b0fxmwie6" path="res://Items/book_ui.gd" id="2_yw1lr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ci8c6"]
+atlas = ExtResource("1_tvpga")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arqyg"]
+atlas = ExtResource("1_tvpga")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljr0w"]
+atlas = ExtResource("1_tvpga")
+region = Rect2(192, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yak04"]
+atlas = ExtResource("1_tvpga")
+region = Rect2(256, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mo7gv"]
+atlas = ExtResource("1_tvpga")
+region = Rect2(320, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsita"]
+atlas = ExtResource("1_tvpga")
+region = Rect2(384, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5llna"]
+atlas = ExtResource("1_tvpga")
+region = Rect2(448, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pemgy"]
+atlas = ExtResource("1_tvpga")
+region = Rect2(512, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yw1lr"]
+atlas = ExtResource("1_tvpga")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thins"]
+atlas = ExtResource("1_tvpga")
+region = Rect2(512, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h37tq"]
+atlas = ExtResource("1_tvpga")
+region = Rect2(448, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tn3e8"]
+atlas = ExtResource("1_tvpga")
+region = Rect2(384, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nv0hp"]
+atlas = ExtResource("1_tvpga")
+region = Rect2(320, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ifyq"]
+atlas = ExtResource("1_tvpga")
+region = Rect2(256, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rno60"]
+atlas = ExtResource("1_tvpga")
+region = Rect2(192, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_th6i2"]
+atlas = ExtResource("1_tvpga")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8sgkc"]
+atlas = ExtResource("1_tvpga")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vrfk5"]
+atlas = ExtResource("1_tvpga")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_thins"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ci8c6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arqyg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljr0w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yak04")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mo7gv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsita")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5llna")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pemgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yw1lr")
+}],
+"loop": false,
+"name": &"next",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_thins")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h37tq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tn3e8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nv0hp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ifyq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rno60")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_th6i2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8sgkc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vrfk5")
+}],
+"loop": false,
+"name": &"prev",
+"speed": 5.0
+}]
+
+[sub_resource type="Theme" id="Theme_yw1lr"]
+
+[node name="BookUI" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_thins")
+animation = &"next"
+script = ExtResource("2_yw1lr")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PageContent" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = -23.0
+offset_top = -14.0
+offset_right = 96.0
+offset_bottom = 192.0
+scale = Vector2(0.16, 0.16)
+theme = SubResource("Theme_yw1lr")
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Gotta put stuff here"
+fit_content = true
+tab_size = 3
+
+[node name="NextPageButton" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.75
+anchor_top = -0.475
+anchor_right = 0.75
+anchor_bottom = 0.75
+offset_left = -30.0
+
+[node name="PreviousPageButton" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.743
+anchor_top = -0.383
+anchor_right = -0.743
+anchor_bottom = 0.737
+offset_left = -0.279999
+offset_top = -1.68
+offset_right = 29.72
+offset_bottom = 0.519999
+
+[connection signal="button_down" from="Control/NextPageButton" to="." method="_on_next_page_button_button_down"]
+[connection signal="button_down" from="Control/PreviousPageButton" to="." method="_on_previous_page_button_button_down"]

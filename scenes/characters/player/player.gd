@@ -83,6 +83,8 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Villagers"):
 		player_in_chatzone = false
 		
+func disable() -> void:
+	process_mode = ProcessMode.PROCESS_MODE_DISABLED
 
 
 func _on_hurt_box_area_entered(area: Area2D) -> void:

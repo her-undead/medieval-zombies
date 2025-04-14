@@ -1,5 +1,3 @@
-extends Resource
-
-class_name Inventory
+class_name Inventory extends Resource
 
 @export var items: Array[Item]

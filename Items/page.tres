@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Page" load_steps=3 format=3 uid="uid://b683ms38pyqwh"]
+
+[ext_resource type="Script" uid="uid://bfc6c1kqldpnp" path="res://Items/item.gd" id="1_m5ss3"]
+[ext_resource type="Script" uid="uid://b6krv128o4ml4" path="res://page.gd" id="2_xbkee"]
+
+[resource]
+script = ExtResource("2_xbkee")
+items = Array[ExtResource("1_m5ss3")]([])
+metadata/_custom_type_script = "uid://b6krv128o4ml4"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ctktmpfgc66ua"]
+[gd_scene load_steps=20 format=3 uid="uid://ctktmpfgc66ua"]
 
 [ext_resource type="Script" uid="uid://388rm2nkvn8m" path="res://scenes/locations/home.gd" id="1_2omcm"]
 [ext_resource type="Script" uid="uid://deg4duurt76yh" path="res://scenes/camera_2d.gd" id="1_21h3r"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dm1mk77dhbakv" path="res://assets/backgrounds/test_parallax1.png" id="5_dhown"]
 [ext_resource type="Texture2D" uid="uid://8kwtngkc121t" path="res://assets/backgrounds/test_ground.png" id="6_vmwan"]
 [ext_resource type="PackedScene" uid="uid://del8agwd3cuwr" path="res://Items/inventory_ui.tscn" id="7_1rnfp"]
+[ext_resource type="PackedScene" uid="uid://bbtlou4mlr1r1" path="res://Items/book_ui.tscn" id="9_v5cv4"]
 [ext_resource type="Texture2D" uid="uid://cgg40gr8xi84j" path="res://assets/sprites/potion.png" id="9_wu7lt"]
 [ext_resource type="PackedScene" uid="uid://ojc1ai51e1rf" path="res://helper_scripts/scene_trigger.tscn" id="10_uv6bo"]
 [ext_resource type="Script" uid="uid://di0ufriph8dnf" path="res://helper_scripts/time/time_system.gd" id="11_dhown"]
@@ -18,6 +19,15 @@
 distance = -94.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_q7asf"]
+
+[sub_resource type="GDScript" id="GDScript_1rnfp"]
+script/source = "extends CanvasLayer
+
+@onready var inventory = $Inventory_UI
+# Called when the node enters the scene tree for the first time.
+#func _input(event):
+	
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dhown"]
 size = Vector2(45, 41)
@@ -87,6 +97,7 @@ scale = Vector2(0.412757, 0.412757)
 texture = ExtResource("6_vmwan")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = SubResource("GDScript_1rnfp")
 
 [node name="Inventory_UI" parent="CanvasLayer" instance=ExtResource("7_1rnfp")]
 anchors_preset = -1
@@ -94,6 +105,10 @@ offset_left = 20.0
 offset_top = 20.0
 scale = Vector2(4, 4)
 metadata/_edit_use_anchors_ = true
+
+[node name="BookUI" parent="CanvasLayer" instance=ExtResource("9_v5cv4")]
+position = Vector2(575, 298)
+scale = Vector2(9.20312, 9.20312)
 
 [node name="EntranceMarkers" type="Node2D" parent="."]
 position = Vector2(129, 19)
