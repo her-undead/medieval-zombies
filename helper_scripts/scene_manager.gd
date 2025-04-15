@@ -4,7 +4,7 @@ var player: Player
 
 var sus_level = 0
 
-var pages = [true, false, false, false, false, true]
+var pages = [true, true, false, false, false, true]
 
 var scene_dir_path = "res://scenes/locations/"
 

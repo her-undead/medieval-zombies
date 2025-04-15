@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bnv1kdn6ubqb7"]
+[gd_scene load_steps=22 format=3 uid="uid://bnv1kdn6ubqb7"]
 
 [ext_resource type="Script" uid="uid://deg4duurt76yh" path="res://scenes/camera_2d.gd" id="1_463vv"]
 [ext_resource type="Script" uid="uid://b8b6i3kpy128t" path="res://scenes/locations/forest.gd" id="1_gol5o"]
@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://bf2dmyh33ywot" path="res://Items/page.tscn" id="13_sqr6d"]
 [ext_resource type="Texture2D" uid="uid://rggdk0iqtudc" path="res://assets/sprites/trees/pxTree5.png" id="14_bwvwo"]
 [ext_resource type="Texture2D" uid="uid://bgqk6kwecufjy" path="res://assets/sprites/trees/pxTree4.png" id="15_w45ep"]
+[ext_resource type="Script" uid="uid://di0ufriph8dnf" path="res://helper_scripts/time/time_system.gd" id="16_w45ep"]
+[ext_resource type="Script" uid="uid://c118nnyg47hus" path="res://helper_scripts/time/date_time.gd" id="17_ve1ye"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_r58t8"]
 distance = -94.0
@@ -23,6 +25,14 @@ distance = -94.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ve1ye"]
 size = Vector2(60.5, 641)
+
+[sub_resource type="Resource" id="Resource_08wlv"]
+script = ExtResource("17_ve1ye")
+seconds = 0
+minutes = 0
+hours = 0
+days = 0
+metadata/_custom_type_script = "uid://c118nnyg47hus"
 
 [node name="Forest" type="Node2D"]
 y_sort_enabled = true
@@ -195,3 +205,10 @@ endPoint = NodePath("Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="Zombie"]
 position = Vector2(685, 83)
+
+[node name="TimeSystem" type="Node" parent="."]
+script = ExtResource("16_w45ep")
+date_time = SubResource("Resource_08wlv")
+metadata/_custom_type_script = "uid://di0ufriph8dnf"
+
+[connection signal="updated" from="TimeSystem" to="." method="_on_time_system_updated"]

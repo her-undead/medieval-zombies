@@ -29,6 +29,7 @@ offset_top = 1.0
 offset_right = 248.0
 offset_bottom = 41.0
 scale = Vector2(2, 2)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Name:"
 
 [node name="Text" type="RichTextLabel" parent="NinePatchRect"]
@@ -38,5 +39,6 @@ offset_top = 45.0
 offset_right = 324.0
 offset_bottom = 114.0
 scale = Vector2(1.5, 1.5)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "I can talk!
 "

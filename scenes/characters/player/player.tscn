@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dek0l00aww0yt"]
+[gd_scene load_steps=15 format=3 uid="uid://dek0l00aww0yt"]
 
 [ext_resource type="Script" uid="uid://cdkv6nhigrn4t" path="res://scenes/characters/player/player.gd" id="1_20d7k"]
 [ext_resource type="Texture2D" uid="uid://bsuphilgajkis" path="res://assets/sprites/spritesheetVeil.png" id="2_t61fv"]
@@ -6,6 +6,14 @@
 [sub_resource type="AtlasTexture" id="AtlasTexture_t61fv"]
 atlas = ExtResource("2_t61fv")
 region = Rect2(1026, 1026, 1026, 1026)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42irl"]
+atlas = ExtResource("2_t61fv")
+region = Rect2(2052, 0, 1026, 1026)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xnwo"]
+atlas = ExtResource("2_t61fv")
+region = Rect2(2052, 0, 1026, 1026)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_686vu"]
 atlas = ExtResource("2_t61fv")
@@ -50,6 +58,23 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42irl")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xnwo")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"die",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,

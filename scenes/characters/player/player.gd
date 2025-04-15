@@ -7,8 +7,11 @@ const SPEED = 300.0
 @export var inventory: Inventory
 @onready var _animated_sprite = $AnimatedSprite2D
 
+
 var is_chatting = false
 var player_in_chatzone = false
+var alive = true
+
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("chat") && player_in_chatzone:
@@ -17,15 +20,6 @@ func _process(delta: float) -> void:
 	#print(is_chatting)
 
 func _physics_process(delta: float) -> void:
-	
-	# Add the gravity.
-	#if not is_on_floor():
-	#	print("not falling")
-	#	velocity += get_gravity() * delta
-
-	# Handle jump.
-	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-	#	velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -46,6 +40,12 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 		handleCollision()
 		updateAnimation()
+		#if !alive:
+			#death_counter.increment_sec(delta*6)
+			#if death_counter.date_time.seconds:
+				#print("you died")
+				#pass
+				##play death scene
 	
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -63,6 +63,10 @@ func updateAnimation():
 	var spriteString = currSprite;
 	var string1
 	var string2
+	
+	if !alive:
+		_animated_sprite.play("die")
+		return
 	
 	if currSprite.contains("left"):
 		string2 = "left"
@@ -89,4 +93,6 @@ func disable() -> void:
 
 func _on_hurt_box_area_entered(area: Area2D) -> void:
 	if area.name == "hitBox":
+		alive = false;
 		print_debug("test"+area.get_parent().name)
+		

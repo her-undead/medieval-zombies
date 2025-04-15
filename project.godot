@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 scene_manager="*res://helper_scripts/scene_manager.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [global_group]
 
 Villagers=""

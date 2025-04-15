@@ -31,11 +31,9 @@ func _on_follow_area_body_entered(body):
 	if body is Player:
 		targeting_player = true
 		target = body;
-		print("hi")
 		
 
 func _on_follow_area_body_exited(body: Node2D) -> void:
 	if body == target:
 		targeting_player = false
 		target = null;
-		print("hi")
