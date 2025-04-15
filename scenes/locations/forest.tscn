@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bnv1kdn6ubqb7"]
+[gd_scene load_steps=19 format=3 uid="uid://bnv1kdn6ubqb7"]
 
 [ext_resource type="Script" uid="uid://deg4duurt76yh" path="res://scenes/camera_2d.gd" id="1_463vv"]
 [ext_resource type="Script" uid="uid://b8b6i3kpy128t" path="res://scenes/locations/forest.gd" id="1_gol5o"]
@@ -13,14 +13,16 @@
 [ext_resource type="PackedScene" uid="uid://ojc1ai51e1rf" path="res://helper_scripts/scene_trigger.tscn" id="11_xracb"]
 [ext_resource type="PackedScene" uid="uid://d08ucntvj4von" path="res://scenes/characters/zombie/zombie.tscn" id="13_cd713"]
 [ext_resource type="PackedScene" uid="uid://bf2dmyh33ywot" path="res://Items/page.tscn" id="13_sqr6d"]
+[ext_resource type="Texture2D" uid="uid://rggdk0iqtudc" path="res://assets/sprites/trees/pxTree5.png" id="14_bwvwo"]
+[ext_resource type="Texture2D" uid="uid://bgqk6kwecufjy" path="res://assets/sprites/trees/pxTree4.png" id="15_w45ep"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_r58t8"]
 distance = -94.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mre32"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gol5o"]
-size = Vector2(45, 41)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ve1ye"]
+size = Vector2(60.5, 641)
 
 [node name="Forest" type="Node2D"]
 y_sort_enabled = true
@@ -127,13 +129,61 @@ position = Vector2(2937, -139)
 [node name="page3" parent="." instance=ExtResource("13_sqr6d")]
 position = Vector2(2420, -93)
 
-[node name="SceneTrigger" parent="." instance=ExtResource("11_xracb")]
-position = Vector2(1560, -80)
+[node name="SceneTrigger2" parent="." instance=ExtResource("11_xracb")]
+position = Vector2(-400, 14)
 connected_scene = "home"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
-position = Vector2(-26, -13)
-shape = SubResource("RectangleShape2D_gol5o")
+[node name="Tree2" type="Sprite2D" parent="SceneTrigger2"]
+y_sort_enabled = true
+position = Vector2(149, -207)
+scale = Vector2(0.352051, 0.352051)
+texture = ExtResource("14_bwvwo")
+
+[node name="Tree" type="Sprite2D" parent="SceneTrigger2"]
+y_sort_enabled = true
+position = Vector2(-29, -61)
+scale = Vector2(0.352051, 0.352051)
+texture = ExtResource("9_08wlv")
+
+[node name="Tree3" type="Sprite2D" parent="SceneTrigger2"]
+y_sort_enabled = true
+position = Vector2(218, -46)
+scale = Vector2(0.352051, 0.352051)
+texture = ExtResource("15_w45ep")
+
+[node name="Tree5" type="Sprite2D" parent="SceneTrigger2"]
+y_sort_enabled = true
+position = Vector2(47, 74)
+scale = Vector2(0.352051, 0.352051)
+texture = ExtResource("10_0ethf")
+
+[node name="Tree4" type="Sprite2D" parent="SceneTrigger2"]
+y_sort_enabled = true
+position = Vector2(413.25, -250.75)
+scale = Vector2(0.352051, 0.352051)
+texture = ExtResource("14_bwvwo")
+
+[node name="Tree6" type="Sprite2D" parent="SceneTrigger2"]
+y_sort_enabled = true
+position = Vector2(235.25, -104.75)
+scale = Vector2(0.352051, 0.352051)
+texture = ExtResource("9_08wlv")
+
+[node name="Tree7" type="Sprite2D" parent="SceneTrigger2"]
+y_sort_enabled = true
+position = Vector2(482.25, -89.7499)
+scale = Vector2(0.352051, 0.352051)
+texture = ExtResource("15_w45ep")
+
+[node name="Tree8" type="Sprite2D" parent="SceneTrigger2"]
+y_sort_enabled = true
+position = Vector2(311.25, 30.2501)
+scale = Vector2(0.352051, 0.352051)
+texture = ExtResource("10_0ethf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger2"]
+position = Vector2(-18.25, -101.5)
+shape = SubResource("RectangleShape2D_ve1ye")
 
 [node name="EntranceMarkers" type="Node2D" parent="."]
 

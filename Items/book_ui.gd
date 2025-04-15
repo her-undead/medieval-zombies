@@ -40,7 +40,7 @@ I’ll begin by interviewing the elders. They hold the stories. They always do.
 ""
 ]
 
-var pages = [true, true, true, true, true, true]
+#var pages = [true, true, true, true, true, true]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	close();
@@ -55,12 +55,6 @@ func _process(delta):
 			close()
 		else:
 			open()
-
-func add_page():
-	for p in pages:
-		if !p:
-			p = true;
-			break;
 
 func open():
 	visible = true
@@ -92,7 +86,7 @@ func _on_next_page_button_button_down() -> void:
 	var new_page = current_page+1;
 	if new_page > page_count:
 		new_page = 0;
-	while !pages[new_page]:
+	while !scene_manager.pages[new_page]:
 		if new_page > page_count:
 			new_page = 0;
 		else:
@@ -104,7 +98,7 @@ func _on_previous_page_button_button_down() -> void:
 	var new_page = current_page-1;
 	if new_page < 0:
 		new_page = page_count;
-	while !pages[new_page]:
+	while !scene_manager.pages[new_page]:
 		if new_page < 0:
 			new_page = page_count;
 		else:

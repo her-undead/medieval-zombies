@@ -19,6 +19,8 @@ func _process(delta: float) -> void:
 
 func _on_pick_up_area_body_entered(body: Node2D) -> void:
 	if body is Player:
+		scene_manager.add_page()
+		print("got page")
 		parent.queue_free();
-		emit_signal("picked")
+		
 		
