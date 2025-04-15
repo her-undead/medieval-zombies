@@ -80,7 +80,6 @@ scale = Vector2(4, 4)
 metadata/_edit_use_anchors_ = true
 
 [node name="BookUI" parent="CanvasLayer" instance=ExtResource("7_gol5o")]
-visible = false
 position = Vector2(613, 326)
 scale = Vector2(10.0938, 10.0938)
 
@@ -89,8 +88,23 @@ position = Vector2(753, 168)
 scale = Vector2(0.525391, 0.525391)
 texture = ExtResource("8_ve1ye")
 
+[node name="PxTree5" type="Sprite2D" parent="."]
+position = Vector2(1800, -254)
+scale = Vector2(0.525391, 0.525391)
+texture = ExtResource("8_ve1ye")
+
+[node name="PxTree6" type="Sprite2D" parent="."]
+position = Vector2(1093, -225)
+scale = Vector2(0.525391, 0.525391)
+texture = ExtResource("8_ve1ye")
+
 [node name="PxTree2" type="Sprite2D" parent="."]
 position = Vector2(1552, 261)
+scale = Vector2(0.394531, 0.394531)
+texture = ExtResource("9_08wlv")
+
+[node name="PxTree4" type="Sprite2D" parent="."]
+position = Vector2(2406, -144)
 scale = Vector2(0.394531, 0.394531)
 texture = ExtResource("9_08wlv")
 
@@ -99,8 +113,19 @@ position = Vector2(1599, -198)
 scale = Vector2(0.541016, 0.541016)
 texture = ExtResource("10_0ethf")
 
+[node name="PxTree7" type="Sprite2D" parent="."]
+position = Vector2(2714, -190)
+scale = Vector2(0.541016, 0.541016)
+texture = ExtResource("10_0ethf")
+
 [node name="page1" parent="." instance=ExtResource("13_sqr6d")]
 position = Vector2(1261, -31)
+
+[node name="page2" parent="." instance=ExtResource("13_sqr6d")]
+position = Vector2(2937, -139)
+
+[node name="page3" parent="." instance=ExtResource("13_sqr6d")]
+position = Vector2(2420, -93)
 
 [node name="SceneTrigger" parent="." instance=ExtResource("11_xracb")]
 position = Vector2(1560, -80)
