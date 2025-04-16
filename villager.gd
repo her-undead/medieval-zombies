@@ -1,10 +1,13 @@
 extends CharacterBody2D
 
-var player
+@onready var player = %Player
 var player_in_chatzone = false
 var is_chatting = false
 var suspicion_level = 0
 var sus = false
+
+@export var list_of_dialogues = []
+@export var sprite = null
 
 func _process(delta):
 	suspicion_level = scene_manager.sus_level
@@ -12,11 +15,14 @@ func _process(delta):
 		sus = true
 	if player_in_chatzone && !is_chatting:
 		if Input.is_action_just_pressed("chat"):
-			$Dialogue.start(sus)
+			$Dialogue.start(sus, list_of_dialogues)
 			is_chatting = true
 			print("chatting")
 			suspicion_level += 1
 			scene_manager.sus_level = suspicion_level
+	if is_chatting:
+		player.is_chatting = true
+	print(is_chatting)
 			
 
 func _on_detect_closeness_body_entered(body: Node2D) -> void:

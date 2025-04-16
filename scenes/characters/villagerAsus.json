@@ -1,5 +1,5 @@
 [
-	{"name": "Villager", "text": "I am REALLY suspicious now"},
-	{"name": "Villager", "text": "I hate you"},
-	{"name": "You", "text": "He hate me"},
+	{"name": "Villager", "text": "I am REALLY suspicious now", "choice": "0"},
+	{"name": "Villager", "text": "I hate you", "choice": "0"},
+	{"name": "You", "text": "He hate me", "choice": "0"},
 ]

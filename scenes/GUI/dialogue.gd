@@ -5,57 +5,53 @@ extends Control
 var dialogue = []
 var current_dialogue_idx = 0
 
+@export var list_of_dialogues = []
+
 var dialogue_active = false
 
 var waiting_for_choice = false
 
+var A_idx
+var B_idx
+
 signal dialogue_finished
+
+var d_list = []
 
 func _ready():
 	$NinePatchRect.visible = false
 	
-func start(suspicious: bool):
+func start(suspicious: bool, list: Array):
+	print("start")
+	d_list = list
 	if dialogue_active:
 		return
 	dialogue_active = true
 	$NinePatchRect.visible = true
 	if suspicious:
-		dialogue = load_sus_dialogue()
+		dialogue = load_dialogue(0)
 	else:
-		dialogue = load_dialogue()
+		dialogue = load_dialogue(1)
 	current_dialogue_idx = -1
 	next_script()
 	
-func load_dialogue():
-	var file = FileAccess.open("res://scenes/characters/villagerA.json", FileAccess.READ)
-	var content = JSON.parse_string(file.get_as_text())
-	return content
-	
-func load_sus_dialogue():
-	var file = FileAccess.open("res://scenes/characters/villagerAsus.json", FileAccess.READ)
-	var content = JSON.parse_string(file.get_as_text())
-	return content
-	
-func load_dialogue_A():
-	var file = FileAccess.open("res://scenes/characters/villagerA-choiceA.json", FileAccess.READ)
-	var content = JSON.parse_string(file.get_as_text())
-	return content
-	
-func load_dialogue_B():
-	var file = FileAccess.open("res://scenes/characters/villagerA-choiceB.json", FileAccess.READ)
+func load_dialogue(idx: int):
+	print("load dialogue")
+	var file = FileAccess.open(d_list[idx], FileAccess.READ)
 	var content = JSON.parse_string(file.get_as_text())
 	return content
 	
 func _input(event):
 	if waiting_for_choice:
+		print("waiting")
 		if event.is_action_pressed("ChoiceA"):
 			waiting_for_choice = false
-			dialogue = load_dialogue_A()
+			dialogue = load_dialogue(A_idx)
 			current_dialogue_idx = -1
 			next_script()
 		if event.is_action_pressed("ChoiceB"):
 			waiting_for_choice = false
-			dialogue = load_dialogue_B()
+			dialogue = load_dialogue(B_idx)
 			current_dialogue_idx = -1
 			next_script()
 	else:
@@ -66,6 +62,7 @@ func _input(event):
 
 	
 func next_script():
+	print("next script")
 	current_dialogue_idx += 1
 	if current_dialogue_idx >= len(dialogue):
 		dialogue_active = false
@@ -78,6 +75,8 @@ func next_script():
 		waiting_for_choice = true
 		$NinePatchRect/Name.text = dialogue[current_dialogue_idx]['name']
 		$NinePatchRect/Text.text = dialogue[current_dialogue_idx]['text']
+		A_idx = int(dialogue[current_dialogue_idx]['A'])
+		B_idx = int(dialogue[current_dialogue_idx]['B'])
 	else:	
 		$NinePatchRect/Name.text = dialogue[current_dialogue_idx]['name']
 		$NinePatchRect/Text.text = dialogue[current_dialogue_idx]['text']
