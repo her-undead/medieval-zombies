@@ -26,8 +26,10 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	if Input.is_action_pressed("dash"):
 		speed = 2
+		_animated_sprite.speed_scale = 3
 	else:
 		speed = 1
+		_animated_sprite.speed_scale = 1
 	
 	if (!is_chatting):
 		var direction := Input.get_axis("ui_left", "ui_right")
