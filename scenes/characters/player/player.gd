@@ -2,6 +2,7 @@ class_name Player extends CharacterBody2D
 
 
 const SPEED = 300.0
+var speed = 1
 #const JUMP_VELOCITY = -400.0
 
 @export var inventory: Inventory
@@ -23,19 +24,23 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
+	if Input.is_action_pressed("dash"):
+		speed = 2
+	else:
+		speed = 1
 	
 	if (!is_chatting):
 		var direction := Input.get_axis("ui_left", "ui_right")
 		if direction:
-			velocity.x = direction * SPEED
+			velocity.x = direction * SPEED * speed
 		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
+			velocity.x = move_toward(velocity.x, 0, SPEED*speed)
 
 		var directionY := Input.get_axis("ui_up", "ui_down")
 		if directionY:
-			velocity.y = directionY * SPEED
+			velocity.y = directionY * SPEED*speed
 		else:
-			velocity.y = move_toward(velocity.y, 0, SPEED)
+			velocity.y = move_toward(velocity.y, 0, SPEED*speed)
 
 		move_and_slide()
 		handleCollision()

@@ -1,10 +1,11 @@
 class_name SceneManager extends Node
 
 var player: Player
+var last_scene_name: String
 
 var sus_level = 0
 
-var pages = [true, true, false, false, false, true]
+var pages = [true, false, false, false, false, true]
 
 var scene_dir_path = "res://scenes/locations/"
 
@@ -19,6 +20,7 @@ func add_page():
 	print(pages)
 
 func change_scene(from, to_scene_name: String) -> void:
+	last_scene_name = from.name
 	player = from.player
 	player.get_parent().remove_child(player)
 	

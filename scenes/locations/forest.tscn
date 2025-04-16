@@ -139,6 +139,9 @@ position = Vector2(2937, -139)
 [node name="page3" parent="." instance=ExtResource("13_sqr6d")]
 position = Vector2(2420, -93)
 
+[node name="page4" parent="." instance=ExtResource("13_sqr6d")]
+position = Vector2(3267, 222)
+
 [node name="SceneTrigger2" parent="." instance=ExtResource("11_xracb")]
 position = Vector2(-400, 14)
 connected_scene = "home"
@@ -197,7 +200,8 @@ shape = SubResource("RectangleShape2D_ve1ye")
 
 [node name="EntranceMarkers" type="Node2D" parent="."]
 
-[node name="any" type="Marker2D" parent="EntranceMarkers"]
+[node name="Home" type="Marker2D" parent="EntranceMarkers"]
+position = Vector2(-347, 0)
 
 [node name="Zombie" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("13_cd713")]
 position = Vector2(350, -41)
