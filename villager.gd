@@ -7,9 +7,11 @@ var suspicion_level = 0
 var sus = false
 
 @export var list_of_dialogues = []
-@export var sprite = null
+@export var sprite = Image
 
 func _process(delta):
+	$Sprite2D.set_texture(sprite)
+	$Sprite2D.scale = Vector2(0.25, 0.25)
 	suspicion_level = scene_manager.sus_level
 	if suspicion_level > 1:
 		sus = true
