@@ -116,7 +116,11 @@ scale = Vector2(10.0703, 10.0703)
 [node name="EntranceMarkers" type="Node2D" parent="."]
 position = Vector2(129, 19)
 
+[node name="Forest" type="Marker2D" parent="EntranceMarkers"]
+position = Vector2(1755, 0)
+
 [node name="any" type="Marker2D" parent="EntranceMarkers"]
+position = Vector2(-440, 0)
 
 [node name="SceneTrigger" parent="." instance=ExtResource("10_uv6bo")]
 position = Vector2(2000, 14)
