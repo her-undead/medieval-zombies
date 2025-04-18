@@ -24,7 +24,7 @@ func _process(delta):
 			scene_manager.sus_level = suspicion_level
 	if is_chatting:
 		player.is_chatting = true
-	print(is_chatting)
+	#print(is_chatting)
 			
 
 func _on_detect_closeness_body_entered(body: Node2D) -> void:

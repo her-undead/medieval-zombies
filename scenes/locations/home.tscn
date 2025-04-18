@@ -1,13 +1,12 @@
-[gd_scene load_steps=25 format=3 uid="uid://ctktmpfgc66ua"]
+[gd_scene load_steps=24 format=3 uid="uid://ctktmpfgc66ua"]
 
 [ext_resource type="Script" uid="uid://388rm2nkvn8m" path="res://scenes/locations/home.gd" id="1_2omcm"]
 [ext_resource type="Script" uid="uid://deg4duurt76yh" path="res://scenes/camera_2d.gd" id="1_21h3r"]
 [ext_resource type="PackedScene" uid="uid://dek0l00aww0yt" path="res://scenes/characters/player/player.tscn" id="2_2omcm"]
 [ext_resource type="Resource" uid="uid://cdttq2xtqnioc" path="res://Items/player_inventory.tres" id="3_wu7lt"]
-[ext_resource type="Texture2D" uid="uid://c83wc7k2xm3y6" path="res://assets/backgrounds/test_sky.png" id="4_uv6bo"]
-[ext_resource type="Texture2D" uid="uid://dm1mk77dhbakv" path="res://assets/backgrounds/test_parallax1.png" id="5_dhown"]
-[ext_resource type="Texture2D" uid="uid://8kwtngkc121t" path="res://assets/backgrounds/test_ground.png" id="6_vmwan"]
+[ext_resource type="Texture2D" uid="uid://n2hq3dif6vq4" path="res://assets/backgrounds/lake1.png" id="5_rhxui"]
 [ext_resource type="PackedScene" uid="uid://del8agwd3cuwr" path="res://Items/inventory_ui.tscn" id="7_1rnfp"]
+[ext_resource type="Texture2D" uid="uid://x1yxfmb4q00b" path="res://assets/backgrounds/lake2.png" id="7_a4m7q"]
 [ext_resource type="PackedScene" uid="uid://bbtlou4mlr1r1" path="res://Items/book_ui.tscn" id="9_v5cv4"]
 [ext_resource type="PackedScene" uid="uid://ojc1ai51e1rf" path="res://helper_scripts/scene_trigger.tscn" id="10_uv6bo"]
 [ext_resource type="Script" uid="uid://di0ufriph8dnf" path="res://helper_scripts/time/time_system.gd" id="11_dhown"]
@@ -65,7 +64,7 @@ position = Vector2(0, 150)
 shape = SubResource("WorldBoundaryShape2D_j0a2n")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, -150)
+position = Vector2(0, -94)
 rotation = 3.14159
 shape = SubResource("WorldBoundaryShape2D_q7asf")
 
@@ -76,20 +75,9 @@ repeat_times = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D2"]
 z_index = -2
-position = Vector2(-67.9997, -89.4999)
-scale = Vector2(0.412903, 0.371281)
-texture = ExtResource("4_uv6bo")
-
-[node name="Parallax2D3" type="Parallax2D" parent="."]
-scroll_scale = Vector2(0.5, 1)
-repeat_size = Vector2(1024, 0)
-repeat_times = 3
-
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3"]
-z_index = -2
-position = Vector2(-75.5002, -87)
-scale = Vector2(0.4125, 0.375286)
-texture = ExtResource("5_dhown")
+position = Vector2(-78.263, -173.5)
+scale = Vector2(1.60082, 1.36389)
+texture = ExtResource("5_rhxui")
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 z_index = -2
@@ -97,9 +85,9 @@ repeat_size = Vector2(1024, 0)
 repeat_times = 3
 
 [node name="TestGround" type="Sprite2D" parent="Parallax2D"]
-position = Vector2(-70.8078, -130.25)
-scale = Vector2(0.412757, 0.412757)
-texture = ExtResource("6_vmwan")
+position = Vector2(-75.7983, -294.676)
+scale = Vector2(1.59937, 2.94069)
+texture = ExtResource("7_a4m7q")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = SubResource("GDScript_1rnfp")

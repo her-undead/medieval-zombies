@@ -18,6 +18,6 @@ func position_player() -> void:
 	if last_scene.is_empty():
 		last_scene = "any"
 	for entrance in entrance_markers.get_children():
-		print(last_scene)
+		#print(last_scene)
 		if entrance is Marker2D and entrance.name == last_scene:
 			player.global_position = entrance.global_position

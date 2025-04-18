@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://deg4duurt76yh" path="res://scenes/camera_2d.gd" id="1_463vv"]
 [ext_resource type="Script" uid="uid://b8b6i3kpy128t" path="res://scenes/locations/forest.gd" id="1_gol5o"]
-[ext_resource type="Texture2D" uid="uid://c83wc7k2xm3y6" path="res://assets/backgrounds/test_sky.png" id="4_cd713"]
-[ext_resource type="Texture2D" uid="uid://dm1mk77dhbakv" path="res://assets/backgrounds/test_parallax1.png" id="5_sqr6d"]
-[ext_resource type="Texture2D" uid="uid://8kwtngkc121t" path="res://assets/backgrounds/test_ground.png" id="6_bwvwo"]
+[ext_resource type="Texture2D" uid="uid://bmum0et62nti6" path="res://assets/backgrounds/forest1.png" id="3_ve1ye"]
+[ext_resource type="Texture2D" uid="uid://dh0nve00gwjt1" path="res://assets/backgrounds/forest2.png" id="4_08wlv"]
+[ext_resource type="Texture2D" uid="uid://dcwfdlssw34uy" path="res://assets/backgrounds/forest3.png" id="5_0ethf"]
 [ext_resource type="PackedScene" uid="uid://bbtlou4mlr1r1" path="res://Items/book_ui.tscn" id="7_gol5o"]
 [ext_resource type="PackedScene" uid="uid://del8agwd3cuwr" path="res://Items/inventory_ui.tscn" id="7_w45ep"]
 [ext_resource type="Texture2D" uid="uid://cosn2np77abp" path="res://assets/sprites/trees/pxTree1.png" id="8_ve1ye"]
@@ -53,33 +53,37 @@ position = Vector2(0, -150)
 rotation = 3.14159
 shape = SubResource("WorldBoundaryShape2D_mre32")
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="Parallax2D3" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.1, 1)
+repeat_size = Vector2(1024, 0)
+repeat_times = 3
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.1, 0.1)
-motion_mirroring = Vector2(2000, 0)
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3"]
+z_index = -2
+position = Vector2(-78.263, -210.5)
+scale = Vector2(1.60082, 1.15833)
+texture = ExtResource("3_ve1ye")
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(413.606, 243.5)
-scale = Vector2(0.808382, 0.377002)
-texture = ExtResource("4_cd713")
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.5, 1)
+repeat_size = Vector2(1024, 0)
+repeat_times = 3
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.5, 0.5)
-motion_mirroring = Vector2(2000, 0)
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2"]
+z_index = -2
+position = Vector2(-78.263, -218.5)
+scale = Vector2(1.60082, 1.11389)
+texture = ExtResource("4_08wlv")
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2(417.235, 127)
-scale = Vector2(0.807875, 0.372998)
-texture = ExtResource("5_sqr6d")
+[node name="Parallax2D" type="Parallax2D" parent="."]
+z_index = -2
+repeat_size = Vector2(1024, 0)
+repeat_times = 3
 
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2(2000, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2(408.688, -93)
-scale = Vector2(0.806703, 0.381007)
-texture = ExtResource("6_bwvwo")
+[node name="TestGround" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(-75.7983, -396.676)
+scale = Vector2(1.59937, 3.50736)
+texture = ExtResource("5_0ethf")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -140,7 +144,7 @@ position = Vector2(2937, -139)
 position = Vector2(2420, -93)
 
 [node name="page4" parent="." instance=ExtResource("13_sqr6d")]
-position = Vector2(3267, 222)
+position = Vector2(3716, 58)
 
 [node name="SceneTrigger2" parent="." instance=ExtResource("11_xracb")]
 position = Vector2(-400, 14)

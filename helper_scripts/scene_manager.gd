@@ -12,12 +12,14 @@ var scene_dir_path = "res://scenes/locations/"
 func add_page():
 	for p in pages.size():
 		if !pages[p]:
-			print(pages[p])
+			#print(pages[p])
 			pages[p] = true;
-			print(pages[p])
+			#print(pages[p])
 			
 			break;
 	print(pages)
+	if false not in pages:
+		get_tree().call_deferred('change_scene_to_file', "res://scenes/GUI/win_scene.tscn")
 
 func change_scene(from, to_scene_name: String) -> void:
 	last_scene_name = from.name
