@@ -100,51 +100,74 @@ position = Vector2(613, 326)
 scale = Vector2(10.0938, 10.0938)
 
 [node name="PxTree1" type="Sprite2D" parent="."]
+y_sort_enabled = true
 position = Vector2(753, 168)
 scale = Vector2(0.525391, 0.525391)
 texture = ExtResource("8_ve1ye")
 
 [node name="PxTree5" type="Sprite2D" parent="."]
+y_sort_enabled = true
 position = Vector2(1800, -254)
 scale = Vector2(0.525391, 0.525391)
 texture = ExtResource("8_ve1ye")
 
 [node name="PxTree6" type="Sprite2D" parent="."]
+y_sort_enabled = true
 position = Vector2(1093, -225)
 scale = Vector2(0.525391, 0.525391)
 texture = ExtResource("8_ve1ye")
 
+[node name="PxTree6" type="Sprite2D" parent="PxTree6"]
+y_sort_enabled = true
+position = Vector2(-833.665, 66.6171)
+scale = Vector2(0.525391, 0.525391)
+texture = ExtResource("8_ve1ye")
+
+[node name="PxTree6" type="Sprite2D" parent="PxTree6/PxTree6"]
+y_sort_enabled = true
+position = Vector2(793.376, -126.795)
+scale = Vector2(1.35942, 1.35942)
+texture = ExtResource("8_ve1ye")
+
+[node name="PxTree5" type="Sprite2D" parent="PxTree6/PxTree6"]
+position = Vector2(-1050.59, -47.0953)
+texture = ExtResource("14_bwvwo")
+
 [node name="PxTree2" type="Sprite2D" parent="."]
-position = Vector2(1552, 261)
+y_sort_enabled = true
+position = Vector2(1436, 191)
 scale = Vector2(0.394531, 0.394531)
 texture = ExtResource("9_08wlv")
 
 [node name="PxTree4" type="Sprite2D" parent="."]
+y_sort_enabled = true
 position = Vector2(2406, -144)
 scale = Vector2(0.394531, 0.394531)
 texture = ExtResource("9_08wlv")
 
 [node name="PxTree3" type="Sprite2D" parent="."]
+y_sort_enabled = true
 position = Vector2(1599, -198)
 scale = Vector2(0.541016, 0.541016)
 texture = ExtResource("10_0ethf")
 
 [node name="PxTree7" type="Sprite2D" parent="."]
-position = Vector2(2714, -190)
+y_sort_enabled = true
+position = Vector2(3159, -194)
 scale = Vector2(0.541016, 0.541016)
 texture = ExtResource("10_0ethf")
 
 [node name="page1" parent="." instance=ExtResource("13_sqr6d")]
-position = Vector2(1261, -31)
+position = Vector2(1108, -66)
 
 [node name="page2" parent="." instance=ExtResource("13_sqr6d")]
-position = Vector2(2937, -139)
+position = Vector2(3382, -143)
 
 [node name="page3" parent="." instance=ExtResource("13_sqr6d")]
 position = Vector2(2420, -93)
 
 [node name="page4" parent="." instance=ExtResource("13_sqr6d")]
-position = Vector2(3716, 58)
+position = Vector2(3827, 127)
 
 [node name="SceneTrigger2" parent="." instance=ExtResource("11_xracb")]
 position = Vector2(-400, 14)
@@ -218,5 +241,42 @@ position = Vector2(685, 83)
 script = ExtResource("16_w45ep")
 date_time = SubResource("Resource_08wlv")
 metadata/_custom_type_script = "uid://di0ufriph8dnf"
+
+[node name="PxTree8" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(2114, -57)
+scale = Vector2(0.748047, 0.748047)
+texture = ExtResource("10_0ethf")
+
+[node name="PxTree9" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(3891, 12)
+scale = Vector2(0.617188, 0.617188)
+texture = ExtResource("10_0ethf")
+
+[node name="PxTree10" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(2773, -245)
+scale = Vector2(0.570312, 0.570312)
+texture = ExtResource("15_w45ep")
+
+[node name="PxTree11" type="Sprite2D" parent="."]
+position = Vector2(3720, -257)
+scale = Vector2(0.606445, 0.606445)
+texture = ExtResource("9_08wlv")
+
+[node name="Zombie2" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("13_cd713")]
+position = Vector2(1709, -120)
+endPoint = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="Zombie2"]
+position = Vector2(178, 240)
+
+[node name="Zombie3" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("13_cd713")]
+position = Vector2(3224, -162)
+endPoint = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="Zombie3"]
+position = Vector2(-649, 338)
 
 [connection signal="updated" from="TimeSystem" to="." method="_on_time_system_updated"]
