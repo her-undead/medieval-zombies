@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://bobes3xu7ywtn"]
+
+[ext_resource type="Texture2D" uid="uid://cqtwspc2tnxpi" path="res://InstructionsUI.png" id="1_umi0n"]
+[ext_resource type="Script" uid="uid://dbf3qbhpgjsht" path="res://scenes/GUI/instructions.gd" id="1_vgfwp"]
+
+[node name="Instructions" type="Node2D"]
+script = ExtResource("1_vgfwp")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+offset_right = 1154.0
+offset_bottom = 649.0
+texture = ExtResource("1_umi0n")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="ExitButton" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 870.0
+offset_top = 36.0
+offset_right = 1003.0
+offset_bottom = 162.0
+
+[connection signal="button_down" from="Control/ExitButton" to="." method="_on_exit_button_button_down"]

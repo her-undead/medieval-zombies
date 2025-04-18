@@ -32,13 +32,13 @@ func _physics_process(delta: float) -> void:
 		_animated_sprite.speed_scale = 1
 	
 	if (!is_chatting):
-		var direction := Input.get_axis("ui_left", "ui_right")
+		var direction := Input.get_axis("left", "right")
 		if direction:
 			velocity.x = direction * SPEED * speed
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED*speed)
 
-		var directionY := Input.get_axis("ui_up", "ui_down")
+		var directionY := Input.get_axis("up", "down")
 		if directionY:
 			velocity.y = directionY * SPEED*speed
 		else:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://ctktmpfgc66ua"]
+[gd_scene load_steps=25 format=3 uid="uid://ctktmpfgc66ua"]
 
 [ext_resource type="Script" uid="uid://388rm2nkvn8m" path="res://scenes/locations/home.gd" id="1_2omcm"]
 [ext_resource type="Script" uid="uid://deg4duurt76yh" path="res://scenes/camera_2d.gd" id="1_21h3r"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://n2hq3dif6vq4" path="res://assets/backgrounds/lake1.png" id="5_rhxui"]
 [ext_resource type="PackedScene" uid="uid://del8agwd3cuwr" path="res://Items/inventory_ui.tscn" id="7_1rnfp"]
 [ext_resource type="Texture2D" uid="uid://x1yxfmb4q00b" path="res://assets/backgrounds/lake2.png" id="7_a4m7q"]
+[ext_resource type="Texture2D" uid="uid://bdf0hxtuh2tyl" path="res://assets/sprites/UI/OverlayTexture.png" id="9_a4m7q"]
 [ext_resource type="PackedScene" uid="uid://bbtlou4mlr1r1" path="res://Items/book_ui.tscn" id="9_v5cv4"]
 [ext_resource type="PackedScene" uid="uid://ojc1ai51e1rf" path="res://helper_scripts/scene_trigger.tscn" id="10_uv6bo"]
 [ext_resource type="Script" uid="uid://di0ufriph8dnf" path="res://helper_scripts/time/time_system.gd" id="11_dhown"]
@@ -102,6 +103,11 @@ metadata/_edit_use_anchors_ = true
 [node name="BookUI" parent="CanvasLayer" instance=ExtResource("9_v5cv4")]
 position = Vector2(568, 326)
 scale = Vector2(10.0703, 10.0703)
+
+[node name="OverlayTexture" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(571, 322)
+scale = Vector2(0.603704, 0.603704)
+texture = ExtResource("9_a4m7q")
 
 [node name="EntranceMarkers" type="Node2D" parent="."]
 position = Vector2(129, 19)
