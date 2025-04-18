@@ -175,7 +175,7 @@ metadata/_custom_type_script = "uid://di0ufriph8dnf"
 
 [node name="villager" parent="." instance=ExtResource("13_1rnfp")]
 position = Vector2(674, -119)
-list_of_dialogues = ["res://scenes/characters/villagerAsus.json", "res://scenes/characters/villagerB.json", "res://scenes/characters/villagerA-choiceA.json", "res://scenes/characters/villagerA-choiceB.json"]
+list_of_dialogues = ["res://scenes/characters/PhilipJohnsonSus.json", "res://scenes/characters/PhilipJohnson.json", "res://scenes/characters/PhilipJohnsonChooseA.json", "res://scenes/characters/PhilipJohnsonChooseB.json"]
 sprite = ExtResource("18_rhxui")
 
 [node name="villager2" parent="." instance=ExtResource("13_1rnfp")]

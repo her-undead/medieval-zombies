@@ -12,9 +12,9 @@ script = ExtResource("1_5f26u")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
-offset_left = -238.0
+offset_left = -415.0
 offset_top = -239.0
-offset_right = 253.0
+offset_right = 417.0
 offset_bottom = -86.0
 texture = ExtResource("1_kbyi3")
 patch_margin_left = 6
@@ -36,9 +36,9 @@ text = "Name:"
 layout_mode = 0
 offset_left = 13.0
 offset_top = 45.0
-offset_right = 324.0
+offset_right = 688.0
 offset_bottom = 114.0
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.2, 1.2)
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "I can talk!
 "

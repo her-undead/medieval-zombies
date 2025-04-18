@@ -8,6 +8,7 @@ var sus = false
 
 @export var list_of_dialogues = []
 @export var sprite = Image
+@export var sus_threshold : int
 
 func _process(delta):
 	$Sprite2D.set_texture(sprite)
