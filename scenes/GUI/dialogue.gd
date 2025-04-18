@@ -50,12 +50,16 @@ func _input(event):
 		if event.is_action_pressed("ChoiceA"):
 			waiting_for_choice = false
 			scene_manager.sus_level = suspicion_level + int(dialogue[current_dialogue_idx]['A-sus'])
+			print("Added " + dialogue[current_dialogue_idx]['A-sus'] + " sus")
+			print("Total sus now:" + str(scene_manager.sus_level))
 			dialogue = load_dialogue(A_idx)
 			current_dialogue_idx = -1
 			next_script()
 		if event.is_action_pressed("ChoiceB"):
 			waiting_for_choice = false
 			scene_manager.sus_level = suspicion_level + int(dialogue[current_dialogue_idx]['B-sus'])
+			print("Added " + dialogue[current_dialogue_idx]['B-sus'] + " sus")
+			print("Total sus now:" + str(scene_manager.sus_level))
 			dialogue = load_dialogue(B_idx)
 			current_dialogue_idx = -1
 			next_script()

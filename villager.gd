@@ -14,14 +14,14 @@ func _process(delta):
 	$Sprite2D.set_texture(sprite)
 	$Sprite2D.scale = Vector2(0.25, 0.25)
 	suspicion_level = scene_manager.sus_level
-	if suspicion_level > 1:
+	if suspicion_level >= sus_threshold:
 		sus = true
 	if player_in_chatzone && !is_chatting:
 		if Input.is_action_just_pressed("chat"):
 			$Dialogue.start(sus, list_of_dialogues)
 			is_chatting = true
 			print("chatting")
-			suspicion_level += 1
+			#suspicion_level += 1
 			scene_manager.sus_level = suspicion_level
 	if is_chatting:
 		player.is_chatting = true

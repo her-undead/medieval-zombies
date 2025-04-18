@@ -1,0 +1,4 @@
+[
+	{"name": "Villager", "text": "You shouldn’t have come here, doctor. You bring eyes we’ve tried to shut.", "choice": "0"},
+	{"name": "Choose:", "text": "What do you mean by that? What eyes? -- (Press A)\nI’m looking for someone. My mentor passed through here—did you see him? -- (Press B)", "choice": "1", "A": "2", "B": "3", "A-sus": "1", "B-sus": "2"},
+]

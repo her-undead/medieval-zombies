@@ -1,4 +1,4 @@
 [
 	{"name": "Villager", "text": "You… you're one of them, aren’t you?", "choice": "0"},
-	{"name": "Choose:", "text": "I’m here to help! I need information. --- (Press A)\nDon’t play dumb. I saw something in the woods - what was it? --- (Press B)", "choice": "1", "A": "2", "B": "3", "A-sus": "1", "B-sus": "3"},
+	{"name": "Choose:", "text": "I’m here to help! I need information. -- (Press A)\nDon’t play dumb. I saw something in the woods - what was it? -- (Press B)", "choice": "1", "A": "2", "B": "3", "A-sus": "1", "B-sus": "3"},
 ]
