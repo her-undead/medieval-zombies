@@ -1,5 +1,5 @@
 [
-	{"name": "Villager", "text": "I am suspicious", "choice": "0"},
+	{"name": "Villager", "text": "I am villager B", "choice": "0"},
 	{"name": "Villager", "text": "I don't like you", "choice": "0"},
 	{"name": "You", "text": "He doesn't like me", "choice": "0"},
 	{"name": "Choose:", "text": "Option A: Press A\nOption B: Press B", "choice": "1", "A": "2", "B": "3"},
