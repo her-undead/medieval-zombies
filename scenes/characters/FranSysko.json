@@ -1,0 +1,12 @@
+[
+	{"name": "Villager", "text": "You carry his tools. You were his student, weren’t you?", "choice": "0"},
+	{
+		"name": "Choose:",
+		"text": "Yes. I need to know what he found here. -- (Press A)\nDo you still have his journal? -- (Press B)",
+		"choice": "1",
+		"A": "2",
+		"B": "3",
+		"A-sus": "1",
+		"B-sus": "1"
+	},
+]

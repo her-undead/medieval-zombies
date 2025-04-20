@@ -9,10 +9,11 @@ var sus = false
 @export var list_of_dialogues = []
 @export var sprite = Image
 @export var sus_threshold : int
+@export var base_sus : int
 
 func _process(delta):
 	$Sprite2D.set_texture(sprite)
-	$Sprite2D.scale = Vector2(0.25, 0.25)
+	$Sprite2D.scale = Vector2(0.15, 0.15)
 	suspicion_level = scene_manager.sus_level
 	if suspicion_level >= sus_threshold:
 		sus = true
@@ -21,7 +22,7 @@ func _process(delta):
 			$Dialogue.start(sus, list_of_dialogues)
 			is_chatting = true
 			print("chatting")
-			#suspicion_level += 1
+			suspicion_level += base_sus
 			scene_manager.sus_level = suspicion_level
 	if is_chatting:
 		player.is_chatting = true

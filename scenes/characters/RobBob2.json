@@ -1,0 +1,6 @@
+[
+	{"name": "Villager", "text": "*Sighs.*", "choice": "0"},
+	{"name": "Villager", "text": "You should know the truth then… We weren’t always here. We lived in the capital once. Had a temple, had favor. But when they cast us out, we lost everything.", "choice": "0"},
+	{"name": "Villager", "text": "…Our god—he… demanded offerings. Without them, the sickness came. So we made a deal… We gave the dead to the lake.", "choice": "0"},
+	{"name": "Choose:", "text": "And my mentor? What happened to him? -- (Press A)\nYou brought this on yourselves. -- (Press B)", "choice": "1", "A": "3", "B": "4", "A-sus": "1", "B-sus": "3"},
+]

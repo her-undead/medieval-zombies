@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://ctktmpfgc66ua"]
+[gd_scene load_steps=31 format=3 uid="uid://b3mbsey56eebr"]
 
 [ext_resource type="Script" uid="uid://388rm2nkvn8m" path="res://scenes/locations/home.gd" id="1_2omcm"]
 [ext_resource type="Script" uid="uid://deg4duurt76yh" path="res://scenes/camera_2d.gd" id="1_21h3r"]
@@ -17,8 +17,14 @@
 [ext_resource type="PackedScene" uid="uid://cs6dt26oswutq" path="res://scenes/characters/villager.tscn" id="13_1rnfp"]
 [ext_resource type="Texture2D" uid="uid://bgqk6kwecufjy" path="res://assets/sprites/trees/pxTree4.png" id="13_a4m7q"]
 [ext_resource type="Texture2D" uid="uid://do5ymjqwhlyix" path="res://assets/sprites/trees/pxTree3.png" id="14_etkuf"]
-[ext_resource type="Texture2D" uid="uid://cw63q6vk6a026" path="res://assets/sprites/NPC Portraits/NPC01.png" id="18_rhxui"]
-[ext_resource type="Texture2D" uid="uid://bqloemig7j8ye" path="res://assets/sprites/NPC Portraits/NPC02.png" id="19_a4m7q"]
+[ext_resource type="Texture2D" uid="uid://bi8jo0mw4cwjk" path="res://assets/sprites/NPC Fullbody Art/NPC_FB_01.png" id="18_k2a77"]
+[ext_resource type="Texture2D" uid="uid://dhrjw5d6om5ja" path="res://assets/sprites/NPC Fullbody Art/NPC_FB_02.png" id="19_x5yv6"]
+[ext_resource type="Texture2D" uid="uid://q34p6ntbdoug" path="res://assets/sprites/NPC Fullbody Art/NPC_FB_03.png" id="20_dx1ye"]
+[ext_resource type="Texture2D" uid="uid://besrr4ofje6rs" path="res://assets/sprites/NPC Fullbody Art/NPC_FB_04.png" id="21_fxfih"]
+[ext_resource type="Texture2D" uid="uid://v5hig3ikwdat" path="res://assets/sprites/NPC Fullbody Art/NPC_FB_05.png" id="22_dbhpn"]
+[ext_resource type="Texture2D" uid="uid://o8wejjad82cw" path="res://assets/sprites/NPC Fullbody Art/NPC_FB_06.png" id="23_a2f3h"]
+[ext_resource type="Texture2D" uid="uid://45elbmf4wwxa" path="res://assets/sprites/NPC Fullbody Art/NPC_FB_07.png" id="24_00x1g"]
+[ext_resource type="Texture2D" uid="uid://cc3bscop05wky" path="res://assets/sprites/NPC Fullbody Art/NPC_FB_08.png" id="25_1oidt"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j0a2n"]
 distance = -94.0
@@ -180,13 +186,49 @@ date_time = SubResource("Resource_1rnfp")
 metadata/_custom_type_script = "uid://di0ufriph8dnf"
 
 [node name="villager" parent="." instance=ExtResource("13_1rnfp")]
-position = Vector2(674, -119)
+position = Vector2(370, 125)
 list_of_dialogues = ["res://scenes/characters/PhilipJohnsonSus.json", "res://scenes/characters/PhilipJohnson.json", "res://scenes/characters/PhilipJohnsonChooseA.json", "res://scenes/characters/PhilipJohnsonChooseB.json"]
-sprite = ExtResource("18_rhxui")
+sprite = ExtResource("18_k2a77")
 sus_threshold = 3
 
 [node name="villager2" parent="." instance=ExtResource("13_1rnfp")]
-position = Vector2(1254, -122)
+position = Vector2(-702, 114)
 list_of_dialogues = ["res://scenes/characters/CorkSkrewSus.json", "res://scenes/characters/CorkSkrew.json", "res://scenes/characters/CorkSkrewChooseA.json", "res://scenes/characters/CorkSkrewChooseB.json"]
-sprite = ExtResource("19_a4m7q")
+sprite = ExtResource("19_x5yv6")
 sus_threshold = 8
+
+[node name="villager3" parent="." instance=ExtResource("13_1rnfp")]
+position = Vector2(1256, -60)
+list_of_dialogues = ["res://scenes/characters/RobBobSus.json", "res://scenes/characters/RobBob.json", "res://scenes/characters/RobBob2.json", "res://scenes/characters/RobBobA.json", "res://scenes/characters/RobBobB.json"]
+sprite = ExtResource("20_dx1ye")
+sus_threshold = 16
+
+[node name="villager4" parent="." instance=ExtResource("13_1rnfp")]
+position = Vector2(-298, -6)
+list_of_dialogues = ["res://scenes/characters/FranSyskoSus.json", "res://scenes/characters/FranSysko.json", "res://scenes/characters/FranSyskoA.json", "res://scenes/characters/FranSyskoB.json"]
+sprite = ExtResource("21_fxfih")
+sus_threshold = 12
+
+[node name="villager5" parent="." instance=ExtResource("13_1rnfp")]
+position = Vector2(-907, -43)
+list_of_dialogues = ["res://scenes/characters/V5.json"]
+sprite = ExtResource("22_dbhpn")
+base_sus = 1
+
+[node name="villager6" parent="." instance=ExtResource("13_1rnfp")]
+position = Vector2(1525, 81)
+list_of_dialogues = ["res://scenes/characters/V6.json"]
+sprite = ExtResource("23_a2f3h")
+base_sus = 1
+
+[node name="villager7" parent="." instance=ExtResource("13_1rnfp")]
+position = Vector2(191, -53)
+list_of_dialogues = ["res://scenes/characters/V7.json"]
+sprite = ExtResource("24_00x1g")
+base_sus = 1
+
+[node name="villager8" parent="." instance=ExtResource("13_1rnfp")]
+position = Vector2(813, 60)
+list_of_dialogues = ["res://scenes/characters/V8.json"]
+sprite = ExtResource("25_1oidt")
+base_sus = 2
