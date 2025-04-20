@@ -1,20 +1,54 @@
-[gd_scene load_steps=4 format=3 uid="uid://bupj3me3vvv2f"]
+[gd_scene load_steps=5 format=3 uid="uid://bupj3me3vvv2f"]
 
 [ext_resource type="Script" uid="uid://irjmvihoiqqd" path="res://scenes/GUI/death_scene.gd" id="1_er81e"]
 [ext_resource type="Texture2D" uid="uid://b8ux1dfy74bw3" path="res://assets/sprites/UI/YouDied01.png" id="2_hgo1m"]
+[ext_resource type="Texture2D" uid="uid://cjg7j372qxge2" path="res://assets/sprites/UI/YouDied02.png" id="3_ekpqx"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_jul2a"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_a7wtd"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_hgo1m")
 }, {
 "duration": 1.0,
+"texture": ExtResource("3_ekpqx")
+}, {
+"duration": 1.0,
 "texture": ExtResource("2_hgo1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hgo1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hgo1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hgo1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hgo1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ekpqx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ekpqx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ekpqx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ekpqx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ekpqx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ekpqx")
 }],
 "loop": true,
 "name": &"default",
-"speed": 12.0
+"speed": 10.0
 }]
 
 [node name="death_scene" type="Control"]
@@ -26,12 +60,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_er81e")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(575.963, 322.5)
-scale = Vector2(0.599074, 0.599074)
-sprite_frames = SubResource("SpriteFrames_jul2a")
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(576.852, 327)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_a7wtd")
 autoplay = "default"
-frame_progress = 0.332074
+frame_progress = 0.611559
 
 [node name="ReplayButton" type="TextureButton" parent="."]
 layout_mode = 0
@@ -41,6 +75,7 @@ offset_right = 410.0
 offset_bottom = 354.0
 
 [node name="ReturnButton" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 225.0
 offset_top = 365.0
 offset_right = 428.0
