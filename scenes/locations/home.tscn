@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://b3mbsey56eebr"]
+[gd_scene load_steps=32 format=3 uid="uid://b3mbsey56eebr"]
 
 [ext_resource type="Script" uid="uid://388rm2nkvn8m" path="res://scenes/locations/home.gd" id="1_2omcm"]
 [ext_resource type="Script" uid="uid://deg4duurt76yh" path="res://scenes/camera_2d.gd" id="1_21h3r"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://o8wejjad82cw" path="res://assets/sprites/NPC Fullbody Art/NPC_FB_06.png" id="23_a2f3h"]
 [ext_resource type="Texture2D" uid="uid://45elbmf4wwxa" path="res://assets/sprites/NPC Fullbody Art/NPC_FB_07.png" id="24_00x1g"]
 [ext_resource type="Texture2D" uid="uid://cc3bscop05wky" path="res://assets/sprites/NPC Fullbody Art/NPC_FB_08.png" id="25_1oidt"]
+[ext_resource type="Texture2D" uid="uid://ck5mq0ppcm2pa" path="res://assets/backgrounds/HouseTrees1.png" id="26_a2f3h"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j0a2n"]
 distance = -94.0
@@ -232,3 +233,18 @@ position = Vector2(813, 60)
 list_of_dialogues = ["res://scenes/characters/V8.json"]
 sprite = ExtResource("25_1oidt")
 base_sus = 2
+
+[node name="HouseTrees1" type="Sprite2D" parent="."]
+position = Vector2(-288, -122)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("26_a2f3h")
+
+[node name="HouseTrees2" type="Sprite2D" parent="."]
+position = Vector2(610, -63)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("26_a2f3h")
+
+[node name="HouseTrees3" type="Sprite2D" parent="."]
+position = Vector2(-1134, 13.9999)
+scale = Vector2(-0.35, 0.35)
+texture = ExtResource("26_a2f3h")
