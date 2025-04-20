@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bobes3xu7ywtn"]
+[gd_scene load_steps=3 format=3 uid="uid://ds5dt06tgglby"]
 
 [ext_resource type="Texture2D" uid="uid://cqtwspc2tnxpi" path="res://InstructionsUI.png" id="1_umi0n"]
-[ext_resource type="Script" uid="uid://dbf3qbhpgjsht" path="res://scenes/GUI/instructions.gd" id="1_vgfwp"]
+[ext_resource type="Script" path="res://scenes/GUI/instructions.gd" id="1_vgfwp"]
 
 [node name="Instructions" type="Node2D"]
 script = ExtResource("1_vgfwp")
@@ -13,6 +13,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
 offset_right = 1154.0
 offset_bottom = 649.0
 texture = ExtResource("1_umi0n")
