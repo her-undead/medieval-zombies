@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://b3mbsey56eebr"]
+[gd_scene load_steps=32 format=3 uid="uid://b3mbsey56eebr"]
 
 [ext_resource type="Script" uid="uid://388rm2nkvn8m" path="res://scenes/locations/home.gd" id="1_2omcm"]
 [ext_resource type="Script" uid="uid://deg4duurt76yh" path="res://scenes/camera_2d.gd" id="1_21h3r"]
@@ -28,6 +28,8 @@
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j0a2n"]
 distance = -94.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dbhpn"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_q7asf"]
 distance = -590.0
@@ -67,16 +69,16 @@ inventory = ExtResource("3_wu7lt")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="bottom" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, 150)
 shape = SubResource("WorldBoundaryShape2D_j0a2n")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, -94)
 rotation = 3.14159
-shape = SubResource("WorldBoundaryShape2D_q7asf")
+shape = SubResource("WorldBoundaryShape2D_dbhpn")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="left" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-1000, 0)
 rotation = 1.5708
 shape = SubResource("WorldBoundaryShape2D_q7asf")

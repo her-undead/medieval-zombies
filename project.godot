@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 scene_manager="*res://helper_scripts/scene_manager.gd"
+BgMusic="*res://scenes/GUI/bg_music.tscn"
 
 [display]
 

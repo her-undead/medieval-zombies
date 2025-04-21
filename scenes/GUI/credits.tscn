@@ -22,7 +22,8 @@ stretch_mode = 6
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 150.0
+offset_right = 1043.0
+offset_bottom = 639.0
 
 [connection signal="button_down" from="TextureButton" to="." method="_on_texture_button_button_down"]

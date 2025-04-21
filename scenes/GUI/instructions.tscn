@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ds5dt06tgglby"]
 
-[ext_resource type="Script" path="res://scenes/GUI/instructions.gd" id="1_vgfwp"]
+[ext_resource type="Script" uid="uid://dbf3qbhpgjsht" path="res://scenes/GUI/instructions.gd" id="1_vgfwp"]
 [ext_resource type="Texture2D" uid="uid://k6wrf2h1f3gc" path="res://assets/sprites/UI/InstructionsUI_FIXED.png" id="2_vgfwp"]
 
 [node name="Instructions" type="Node2D"]

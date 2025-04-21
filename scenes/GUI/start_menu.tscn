@@ -14,8 +14,8 @@ script = ExtResource("1_427uy")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 1158.0
-offset_bottom = 667.0
+offset_right = 1154.0
+offset_bottom = 649.0
 texture = ExtResource("2_dqpii")
 expand_mode = 3
 stretch_mode = 6
@@ -32,17 +32,17 @@ layout_mode = 2
 theme_override_constants/separation = 20
 
 [node name="StartButton" type="TextureButton" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 60)
+custom_minimum_size = Vector2(0, 55)
 layout_mode = 2
 
 [node name="ControlsButton" type="TextureButton" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 60)
+custom_minimum_size = Vector2(0, 55)
 layout_mode = 2
 
 [node name="CreditsButton" type="TextureButton" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 60)
+custom_minimum_size = Vector2(0, 55)
 layout_mode = 2
 
 [node name="ExitButton" type="TextureButton" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 60)
+custom_minimum_size = Vector2(0, 55)
 layout_mode = 2
