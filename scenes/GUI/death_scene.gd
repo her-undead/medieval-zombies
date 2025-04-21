@@ -13,6 +13,6 @@ func _ready():
 
 func on_replay_pressed() -> void:
 	get_tree().call_deferred('change_scene_to_file', "res://scenes/locations/home.tscn")
-
+	scene_manager.reset_pages();
 func on_exit_pressed() -> void:
 	get_tree().call_deferred('change_scene_to_file', "res://scenes/GUI/start_menu.tscn")

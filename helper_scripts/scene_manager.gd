@@ -20,7 +20,8 @@ func add_page():
 	print(pages)
 	if false not in pages:
 		get_tree().call_deferred('change_scene_to_file', "res://scenes/GUI/win_scene.tscn")
-
+func reset_pages():
+	pages = [true, false, false, false, false, true]
 func change_scene(from, to_scene_name: String) -> void:
 	last_scene_name = from.name
 	player = from.player
