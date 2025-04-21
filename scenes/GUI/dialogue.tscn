@@ -34,10 +34,10 @@ text = "Name:"
 
 [node name="Text" type="RichTextLabel" parent="NinePatchRect"]
 layout_mode = 0
-offset_left = 28.0
+offset_left = 30.0
 offset_top = 37.0
-offset_right = 703.0
-offset_bottom = 106.0
+offset_right = 675.0
+offset_bottom = 121.0
 scale = Vector2(1.2, 1.2)
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "I can talk!
