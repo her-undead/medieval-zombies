@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c5jyqbapxyifk"]
+[gd_scene load_steps=5 format=3 uid="uid://c5jyqbapxyifk"]
 
 [ext_resource type="Texture2D" uid="uid://b8ux1dfy74bw3" path="res://assets/sprites/UI/YouDied01.png" id="1_nvfhq"]
+[ext_resource type="Script" uid="uid://x7xv4mhpdi3x" path="res://scenes/GUI/win_scene.gd" id="1_vckmy"]
 [ext_resource type="Texture2D" uid="uid://cjg7j372qxge2" path="res://assets/sprites/UI/YouDied02.png" id="2_yxcv0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yxcv0"]
@@ -39,6 +40,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_vckmy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(577.741, 329.5)
@@ -60,3 +62,15 @@ offset_left = 241.0
 offset_top = 369.0
 offset_right = 444.0
 offset_bottom = 459.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 511.0
+offset_top = 123.0
+offset_right = 743.0
+offset_bottom = 293.0
+scale = Vector2(1.96, 1.96)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "I've collected what I could of my mentor's research...but it's not enough. There's something else I'm missing.
+
+To be continued..."
