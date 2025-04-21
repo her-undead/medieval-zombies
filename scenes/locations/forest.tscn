@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bnv1kdn6ubqb7"]
+[gd_scene load_steps=22 format=3 uid="uid://bnv1kdn6ubqb7"]
 
 [ext_resource type="Script" uid="uid://deg4duurt76yh" path="res://scenes/camera_2d.gd" id="1_463vv"]
 [ext_resource type="Script" uid="uid://b8b6i3kpy128t" path="res://scenes/locations/forest.gd" id="1_gol5o"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://dh0nve00gwjt1" path="res://assets/backgrounds/forest2.png" id="4_08wlv"]
 [ext_resource type="Texture2D" uid="uid://dcwfdlssw34uy" path="res://assets/backgrounds/forest3.png" id="5_0ethf"]
 [ext_resource type="PackedScene" uid="uid://bbtlou4mlr1r1" path="res://Items/book_ui.tscn" id="7_gol5o"]
-[ext_resource type="PackedScene" uid="uid://del8agwd3cuwr" path="res://Items/inventory_ui.tscn" id="7_w45ep"]
 [ext_resource type="Texture2D" uid="uid://bdf0hxtuh2tyl" path="res://assets/sprites/UI/OverlayTexture.png" id="8_08wlv"]
 [ext_resource type="Texture2D" uid="uid://cosn2np77abp" path="res://assets/sprites/trees/pxTree1.png" id="8_ve1ye"]
 [ext_resource type="Texture2D" uid="uid://bul43x6n5ioyx" path="res://assets/sprites/trees/pxTree2.png" id="9_08wlv"]
@@ -87,14 +86,6 @@ scale = Vector2(1.59937, 3.50736)
 texture = ExtResource("5_0ethf")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Inventory_UI" parent="CanvasLayer" instance=ExtResource("7_w45ep")]
-visible = false
-anchors_preset = -1
-offset_left = 20.0
-offset_top = 20.0
-scale = Vector2(4, 4)
-metadata/_edit_use_anchors_ = true
 
 [node name="BookUI" parent="CanvasLayer" instance=ExtResource("7_gol5o")]
 position = Vector2(613, 326)
