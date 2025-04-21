@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5jyqbapxyifk"]
+[gd_scene load_steps=8 format=3 uid="uid://c5jyqbapxyifk"]
 
 [ext_resource type="Texture2D" uid="uid://b8ux1dfy74bw3" path="res://assets/sprites/UI/YouDied01.png" id="1_nvfhq"]
 [ext_resource type="Script" uid="uid://x7xv4mhpdi3x" path="res://scenes/GUI/win_scene.gd" id="1_vckmy"]
+[ext_resource type="Texture2D" uid="uid://ctq3ht20bskt0" path="res://assets/backgrounds/wood.jpg" id="2_q273t"]
 [ext_resource type="Texture2D" uid="uid://cjg7j372qxge2" path="res://assets/sprites/UI/YouDied02.png" id="2_yxcv0"]
+[ext_resource type="Texture2D" uid="uid://bdf0hxtuh2tyl" path="res://assets/sprites/UI/OverlayTexture.png" id="3_tqxnj"]
 [ext_resource type="Texture2D" uid="uid://0vkf3fcjmrmg" path="res://assets/sprites/UI/coverimage.png" id="4_cuip0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yxcv0"]
@@ -42,6 +44,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vckmy")
+
+[node name="Wood" type="Sprite2D" parent="."]
+position = Vector2(546.129, 336.5)
+scale = Vector2(1.7302, 1.7302)
+texture = ExtResource("2_q273t")
+
+[node name="OverlayTexture" type="Sprite2D" parent="."]
+position = Vector2(-329.889, 347.5)
+scale = Vector2(0.79537, 0.79537)
+texture = ExtResource("3_tqxnj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(577.741, 329.5)

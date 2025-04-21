@@ -1,10 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://ds5dt06tgglby"]
+[gd_scene load_steps=5 format=3 uid="uid://ds5dt06tgglby"]
 
 [ext_resource type="Script" uid="uid://dbf3qbhpgjsht" path="res://scenes/GUI/instructions.gd" id="1_vgfwp"]
+[ext_resource type="Texture2D" uid="uid://ctq3ht20bskt0" path="res://assets/backgrounds/wood.jpg" id="2_ggmqk"]
 [ext_resource type="Texture2D" uid="uid://k6wrf2h1f3gc" path="res://assets/sprites/UI/InstructionsUI_FIXED.png" id="2_vgfwp"]
+[ext_resource type="Texture2D" uid="uid://bdf0hxtuh2tyl" path="res://assets/sprites/UI/OverlayTexture.png" id="3_mu8fh"]
 
 [node name="Instructions" type="Node2D"]
 script = ExtResource("1_vgfwp")
+
+[node name="Wood" type="Sprite2D" parent="."]
+position = Vector2(546.129, 336.5)
+scale = Vector2(1.7302, 1.7302)
+texture = ExtResource("2_ggmqk")
+
+[node name="OverlayTexture" type="Sprite2D" parent="."]
+position = Vector2(-329.889, 347.5)
+scale = Vector2(0.79537, 0.79537)
+texture = ExtResource("3_mu8fh")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

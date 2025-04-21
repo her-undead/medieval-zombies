@@ -1,12 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckcddyhttnq13"]
+[gd_scene load_steps=2 format=3 uid="uid://bsu5mqtb7ek3w"]
 
-[ext_resource type="Script" uid="uid://b1pspxde2uthf" path="res://scenes/GUI/bg_music.gd" id="1_thewl"]
+[ext_resource type="AudioStream" uid="uid://ity4004n41x3" path="res://assets/music/SpookyQuest.mp3" id="1_thewl"]
 
-[node name="BgMusic" type="Node"]
-script = ExtResource("1_thewl")
-
-[node name="Track1" type="AudioStreamPlayer" parent="."]
-
-[node name="Track2" type="AudioStreamPlayer" parent="."]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="BgMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_thewl")
+pitch_scale = 0.5
+autoplay = true

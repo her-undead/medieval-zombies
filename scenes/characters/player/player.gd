@@ -47,12 +47,6 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 		handleCollision()
 		updateAnimation()
-		#if !alive:
-			#death_counter.increment_sec(delta*6)
-			#if death_counter.date_time.seconds:
-				#print("you died")
-				#pass
-				##play death scene
 	
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
