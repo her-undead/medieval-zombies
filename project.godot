@@ -11,9 +11,11 @@ config_version=5
 [application]
 
 config/name="Medieval Zombies"
+config/description="A doctor travels to an isolated village in search of her missing mentor and finds the dead stirring"
+config/version="1.0"
 run/main_scene="res://scenes/GUI/start_menu.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://bs0clks1khyfy"
 
 [autoload]
 
