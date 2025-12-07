@@ -4,6 +4,7 @@ class_name BaseScene extends Node
 @onready var entrance_markers: Node2D = $EntranceMarkers
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print("test hi")
 	if scene_manager.player:
 		if player:
 			player.queue_free()

@@ -57,7 +57,7 @@ func handleCollision():
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i);
 		var collider = collision.get_collider();
-		#print(collider.name)
+		print(collider.name)
 		
 func updateAnimation():
 	var currSprite = _animated_sprite.animation;
